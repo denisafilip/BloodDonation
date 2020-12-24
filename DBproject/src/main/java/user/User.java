@@ -115,7 +115,7 @@ public class User {
     public boolean verifyCNP() {
         String constant = "279146358279";
         if (!this.CNP.matches("[0-9]+")) {
-            System.err.println("You must enter only numbers for the CNP");
+            System.err.println("You must enter only numbers in your CNP");
             return false;
         }
         if (this.CNP.length() != 13) {
@@ -124,7 +124,7 @@ public class User {
         }
         int sum = 0;
         for (int i = 0; i < constant.length(); i++) {
-            sum = sum + this.CNP.charAt(i) * constant.charAt(i);
+            sum += (this.CNP.charAt(i) - '0') * (constant.charAt(i) - '0');
         }
         int rest = sum % 11;
         int controlDigit = Character.getNumericValue(this.CNP.charAt(12));
@@ -154,7 +154,7 @@ public class User {
 
     /**
      *
-     * @return true if user is over 18 and under 110 years old (eligible to donate blood)
+     * @return true if user is over 18 and under 65 years old (eligible to donate blood)
      */
     public boolean isEligibleToDonate() {
         return (this.age >= 18 && this.age < 65);

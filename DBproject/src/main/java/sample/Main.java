@@ -5,6 +5,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import user.County;
+import user.Scraper;
+
+import java.util.ArrayList;
 
 public class Main extends Application {
 
@@ -19,5 +23,13 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
+
+        //testing purposes
+        Scraper scraper = new Scraper();
+        ArrayList<County> counties = scraper.webScrapingCounties();
+
+        for (County c : counties) {
+            System.out.println(c.getName() + " " + c.getNumberOfBloodBanks());
+        }
     }
 }

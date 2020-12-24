@@ -1,8 +1,8 @@
 package user;
 
 public class County {
-    String name;
-    int numberOfBloodBanks;
+    private String name;
+    private int numberOfBloodBanks;
 
     public County(String name, int numberOfBloodBanks) {
         this.name = name;
@@ -24,6 +24,4 @@ public class County {
     public void setNumberOfBloodBanks(int numberOfBloodBanks) {
         this.numberOfBloodBanks = numberOfBloodBanks;
     }
-
-
 }
