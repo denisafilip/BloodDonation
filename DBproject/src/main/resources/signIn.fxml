@@ -17,7 +17,7 @@
          <children>
             <ImageView fitHeight="333.0" fitWidth="296.0" layoutX="24.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="63.39999999999998" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="579.2" AnchorPane.topAnchor="63.0">
                <image>
-                  <Image url="@assets/signUpPic.png" />
+                  <Image url="@assets/signInAndUpPic.png" />
                </image>
             </ImageView>
             <AnchorPane layoutX="334.0" layoutY="21.0" prefHeight="379.0" prefWidth="550.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
