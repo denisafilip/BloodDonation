@@ -12,10 +12,10 @@ public class User {
     private String gender;
     private String bloodType;
     private boolean RH;
-    private String county;
+    private County county;
     private String CNP;
 
-    public User(String firstName, String lastName, String phoneNumber, LocalDate dateOfBirth, String gender, String bloodType, boolean RH, String county, String CNP) {
+    public User(String firstName, String lastName, String phoneNumber, LocalDate dateOfBirth, String gender, String bloodType, boolean RH, County county, String CNP) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
@@ -68,11 +68,11 @@ public class User {
         this.bloodType = bloodType;
     }
 
-    public String getCounty() {
+    public County getCounty() {
         return county;
     }
 
-    public void setCounty(String county) {
+    public void setCounty(County county) {
         this.county = county;
     }
 
