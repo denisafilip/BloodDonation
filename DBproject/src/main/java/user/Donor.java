@@ -7,7 +7,7 @@ public class Donor extends User {
     private String email;
     private int weight;
 
-    public Donor(String firstName, String lastName, String phoneNumber, LocalDate dateOfBirth, String gender, String bloodType, boolean RH, String county, String CNP, String email, int weight) {
+    public Donor(String firstName, String lastName, String phoneNumber, LocalDate dateOfBirth, String gender, String bloodType, boolean RH, County county, String CNP, String email, int weight) {
         super(firstName, lastName, phoneNumber, dateOfBirth, gender, bloodType, RH, county, CNP);
         this.email = email;
         this.weight = weight;
