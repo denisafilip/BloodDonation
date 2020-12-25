@@ -5,4 +5,5 @@ module DBproject {
 
     opens sample to javafx.fxml;
     exports sample;
+    exports user;
 }

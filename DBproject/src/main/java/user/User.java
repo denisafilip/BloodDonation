@@ -1,5 +1,7 @@
 package user;
 
+import javafx.scene.control.Label;
+
 import java.time.LocalDate;
 import java.time.Period;
 
@@ -112,14 +114,14 @@ public class User {
      *
      * @return true if donor's CNP is valid and meets all of the requirements
      */
-    public boolean verifyCNP() {
+    public boolean verifyCNP(Label lblCNP) {
         String constant = "279146358279";
         if (!this.CNP.matches("[0-9]+")) {
-            System.err.println("You must enter only numbers in your CNP");
+            lblCNP.setText("Your CNP must contain only digits.");
             return false;
         }
         if (this.CNP.length() != 13) {
-            System.err.println("The CNP must have 13 digits.");
+            lblCNP.setText("Your CNP must have 13 digits.");
             return false;
         }
         int sum = 0;
@@ -133,11 +135,11 @@ public class User {
                     (this.gender.equals("M") && (this.CNP.charAt(0) == '5' || this.CNP.charAt(0) == '1'))) {
                 return true;
             } else {
-                System.err.println("The first digit of your CNP does not match your gender.");
+                lblCNP.setText("The first digit of your CNP does not match your gender.");
                 return false;
             }
         } else {
-            System.err.println("The CNP you entered is not valid.");
+            lblCNP.setText("The CNP you entered is not valid.");
             return false;
         }
     }
@@ -176,4 +178,11 @@ public class User {
     public boolean verifyLastName() {
         return (this.lastName.matches("[a-zA-Z- ]+"));
     }
+
+    /**
+     * @return true if user's phone number has 10 digits
+     */
+    public boolean verifyPhoneNumber() {return (this.phoneNumber.length() == 10);}
+
+
 }
