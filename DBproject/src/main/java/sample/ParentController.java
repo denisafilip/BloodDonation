@@ -16,31 +16,11 @@ import java.io.IOException;
 
 public class ParentController {
 
-    public void goForwardToScene(ActionEvent event, String fxmlFilePath, String windowTitle) throws IOException {
-        Parent parent = FXMLLoader.load(getClass().getResource(fxmlFilePath));
-        Scene scene = new Scene(parent);
-        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        window.setTitle(windowTitle);
-        window.setScene(scene);
-        window.show();
-    }
-
-    public void goBackToScene(ActionEvent event, String fxmlFilePath) throws IOException {
+    public void changeScene(ActionEvent event, String fxmlFilePath) throws IOException {
         Parent parent = FXMLLoader.load(getClass().getResource(fxmlFilePath));
         Scene  scene = new Scene(parent);
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-
         window.setScene(scene);
         window.show();
-    }
-
-
-    public void showAlert(String title, String message) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        //alert.initOwner(owner);
-        alert.show();
     }
 }

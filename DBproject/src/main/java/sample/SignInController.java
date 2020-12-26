@@ -36,7 +36,7 @@ public class SignInController extends ParentController {
     }
 
     public void goToSignUp(ActionEvent actionEvent) throws IOException {
-        goBackToScene(actionEvent, "/signUp.fxml");
+        changeScene(actionEvent, "/signUp.fxml");
     }
 
     public void clearSignInLabels() {

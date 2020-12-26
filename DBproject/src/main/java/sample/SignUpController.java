@@ -136,13 +136,15 @@ public class SignUpController extends ParentController implements Initializable 
             lblDOB.setText("You must be over 18 and under 65 to donate blood.");
             return;
         }
-        donor.verifyCNP(lblCNP);
+        if (!donor.verifyCNP(lblCNP)) {
+            return;
+        }
 
         //if everything's alright, go to next page - TO DO
     }
 
     public void goToSignIn(ActionEvent event) throws IOException {
-        goForwardToScene(event, "/signIn.fxml", "Sign In");
+        changeScene(event, "/signIn.fxml");
     }
 
     /**
