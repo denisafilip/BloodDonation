@@ -106,7 +106,7 @@ public class SignUpController extends ParentController implements Initializable 
             return;
         }
         if (comboRH.getSelectionModel().getSelectedItem() == null) {
-            lblGender.setText("Please choose your RH.");
+            lblRH.setText("Please choose your RH.");
             return;
         }
         if (comboCounty.getSelectionModel().getSelectedItem() == null) {
@@ -114,7 +114,7 @@ public class SignUpController extends ParentController implements Initializable 
             return;
         }
         if (txtCNP.getText().isEmpty()) {
-            lblPhoneNumber.setText("Please enter your CNP.");
+            lblCNP.setText("Please enter your CNP.");
             return;
         }
         Boolean RH = transformRHIntoBoolean();
