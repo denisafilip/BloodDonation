@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import user.BloodType;
 import user.County;
 import user.Donor;
 import user.Scraper;
@@ -23,15 +24,11 @@ public class SignUpController extends ParentController implements Initializable 
     @FXML private Label lblConfirmPassword;
     @FXML private Label lblPhoneNumber;
     @FXML private Label lblDOB;
-    @FXML private Label lblGender;
     @FXML private Label lblBloodType;
     @FXML private Label lblRH;
     @FXML private Label lblCounty;
     @FXML private Label lblCNP;
 
-    @FXML
-    private ComboBox<String> comboGender;
-    private final ObservableList<String> genderOptions = FXCollections.observableArrayList("F", "M");
     @FXML
     private ComboBox<String> comboCounty;
     private Scraper scraper = new Scraper();
@@ -63,7 +60,7 @@ public class SignUpController extends ParentController implements Initializable 
     @FXML
     private Button btnSignIn;
 
-    public void signUp(ActionEvent event) {
+    public void signUp(ActionEvent event) throws IOException {
         clearErrorLabels();
         if (txtFirstName.getText().isEmpty()) {
             lblFirstName.setText("Please enter your first name.");
@@ -85,6 +82,10 @@ public class SignUpController extends ParentController implements Initializable 
             lblConfirmPassword.setText("Please confirm your password.");
             return;
         }
+        if (passPassword.getText().length() < 6) {
+            lblPassword.setText("The password needs to have at least 6 characters.");
+            return;
+        }
         if (!passPassword.getText().equals(passConfirmPassword.getText())) {
             lblConfirmPassword.setText("Your passwords do not match.");
             return;
@@ -95,10 +96,6 @@ public class SignUpController extends ParentController implements Initializable 
         }
         if (dateDOB.getValue() == null) {
             lblDOB.setText("Please enter your date of birth.");
-            return;
-        }
-        if (comboGender.getSelectionModel().getSelectedItem() == null) {
-            lblGender.setText("Please choose your gender.");
             return;
         }
         if (comboBloodType.getSelectionModel().getSelectedItem() == null) {
@@ -119,7 +116,8 @@ public class SignUpController extends ParentController implements Initializable 
         }
         Boolean RH = transformRHIntoBoolean();
         County userCounty = mapCountyNameToCounty(counties);
-        Donor donor = new Donor(txtFirstName.getText(), txtLastName.getText(), txtPhoneNumber.getText(), dateDOB.getValue(), comboGender.getValue(), comboBloodType.getValue(), RH, userCounty, txtCNP.getText(), txtEmail.getText(), passPassword.getText());
+        BloodType bloodType = new BloodType(comboBloodType.getValue(), RH);
+        Donor donor = new Donor(txtFirstName.getText(), txtLastName.getText(), txtPhoneNumber.getText(), dateDOB.getValue(), txtEmail.getText(), passPassword.getText(), bloodType, userCounty, txtCNP.getText());
         if (!donor.verifyFirstName()) {
             lblFirstName.setText("First name must contain only letters.");
             return;
@@ -139,8 +137,15 @@ public class SignUpController extends ParentController implements Initializable 
         if (!donor.verifyCNP(lblCNP)) {
             return;
         }
+        if (donor.verifyDateOfBirth() != 0) {
+            lblDOB.setText("The date of birth does not coincide with the one in the CNP.");
+        }
+        if (!database.isDonorInDatabaseSignUp(donor)) {
+            database.insertDonorInDatabase(donor);
+            currentDonor = donor;
+            //change scene to next page
+        }
 
-        //if everything's alright, go to next page - TO DO
     }
 
     public void goToSignIn(ActionEvent event) throws IOException {
@@ -158,7 +163,6 @@ public class SignUpController extends ParentController implements Initializable 
         lblConfirmPassword.setText("");
         lblPhoneNumber.setText("");
         lblDOB.setText("");
-        lblGender.setText("");
         lblBloodType.setText("");
         lblRH.setText("");
         lblCounty.setText("");
@@ -201,7 +205,6 @@ public class SignUpController extends ParentController implements Initializable 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        comboGender.setItems(genderOptions);
         comboRH.setItems(RHOptions);
         comboBloodType.setItems(bloodTypeOptions);
         ArrayList<String> countyNames = createArrayWithCountyNames();

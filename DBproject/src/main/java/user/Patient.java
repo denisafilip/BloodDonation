@@ -7,8 +7,8 @@ public class Patient extends User {
     private Hospital hospital;
     private Boolean received;
 
-    public Patient(String firstName, String lastName, String phoneNumber, LocalDate dateOfBirth, String gender, String bloodType, boolean RH, County county, String CNP, Hospital hospital) {
-        super(firstName, lastName, phoneNumber, dateOfBirth, gender, bloodType, RH, county, CNP);
+    public Patient(String firstName, String lastName, String phoneNumber, LocalDate dateOfBirth, BloodType bloodType, County county, String CNP, Hospital hospital) {
+        super(firstName, lastName, phoneNumber, dateOfBirth, bloodType, county, CNP);
         this.hospital = hospital;
     }
 

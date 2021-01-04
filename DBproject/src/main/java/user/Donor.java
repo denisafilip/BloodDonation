@@ -8,8 +8,14 @@ public class Donor extends User {
     private String password;
     private int weight;
 
-    public Donor(String firstName, String lastName, String phoneNumber, LocalDate dateOfBirth, String gender, String bloodType, boolean RH, County county, String CNP, String email, String password) {
-        super(firstName, lastName, phoneNumber, dateOfBirth, gender, bloodType, RH, county, CNP);
+    public Donor(String email, String password) {
+        super();
+        this.email = email;
+        this.password = password;
+    }
+
+    public Donor(String firstName, String lastName, String phoneNumber, LocalDate dateOfBirth, String email, String password, BloodType bloodType, County county, String CNP) {
+        super(firstName, lastName, phoneNumber, dateOfBirth, bloodType, county, CNP);
         this.email = email;
         this.password = password;
     }

@@ -12,22 +12,24 @@ public class User {
     private LocalDate dateOfBirth;
     private int age;
     private String gender;
-    private String bloodType;
-    private boolean RH;
+    private BloodType bloodType;
     private County county;
     private String CNP;
 
-    public User(String firstName, String lastName, String phoneNumber, LocalDate dateOfBirth, String gender, String bloodType, boolean RH, County county, String CNP) {
+    public User() {
+
+    }
+
+    public User(String firstName, String lastName, String phoneNumber, LocalDate dateOfBirth, BloodType bloodType, County county, String CNP) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.dateOfBirth = dateOfBirth;
         this.age = computeUserAge();
-        this.gender = gender;
         this.bloodType = bloodType;
-        this.RH = RH;
         this.county = county;
         this.CNP = CNP;
+        determineGender();
     }
 
     public String getFirstName() {
@@ -62,11 +64,11 @@ public class User {
         this.age = age;
     }
 
-    public String getBloodType() {
+    public BloodType getBloodType() {
         return bloodType;
     }
 
-    public void setBloodType(String bloodType) {
+    public void setBloodType(BloodType bloodType) {
         this.bloodType = bloodType;
     }
 
@@ -100,14 +102,6 @@ public class User {
 
     public void setGender(String gender) {
         this.gender = gender;
-    }
-
-    public boolean isRH() {
-        return RH;
-    }
-
-    public void setRH(boolean RH) {
-        this.RH = RH;
     }
 
     /**
@@ -168,7 +162,7 @@ public class User {
      * @return true if user's first name is formed only of letters, spaces and hyphens
      */
     public boolean verifyFirstName() {
-        return (this.firstName.matches("[a-zA-Z- ]+"));
+        return (this.firstName.matches("[a-zA-Z- ăîâșț]+"));
     }
 
     /**
@@ -176,13 +170,41 @@ public class User {
      * @return true if user's last name is formed only of letters, spaces and hyphens
      */
     public boolean verifyLastName() {
-        return (this.lastName.matches("[a-zA-Z- ]+"));
+        return (this.lastName.matches("[a-zA-Z- ăîâșț]+"));
     }
 
     /**
      * @return true if user's phone number has 10 digits
      */
     public boolean verifyPhoneNumber() {return (this.phoneNumber.length() == 10);}
+
+    /**
+     *
+     * @return true if user's input birthday is the same as the one obtained from the CNP
+     */
+    public int verifyDateOfBirth() {
+        String birthYear;
+        if (this.CNP.charAt(0) == '6' || this.CNP.charAt(0) == '5') {
+            birthYear = "20" + this.CNP.charAt(1) + this.CNP.charAt(2);
+        } else {
+            birthYear = "19" + this.CNP.charAt(1) + this.CNP.charAt(2);
+        }
+        int birthMonth = (this.CNP.charAt(3) - '0')*10 + (this.CNP.charAt(4) - '0');
+        int birthDay = (this.CNP.charAt(5) - '0')*10 + (this.CNP.charAt(6) - '0');
+        LocalDate userDOB = LocalDate.of(Integer.parseInt(birthYear), birthMonth, birthDay);
+        return userDOB.compareTo(this.dateOfBirth);
+    }
+
+    /**
+     * Assigns the user's gender, based on the first digit of the CNP
+     */
+    public void determineGender() {
+        if (this.CNP.charAt(0) == '6' || this.CNP.charAt(0) == '2') {
+            this.gender = "F";
+        } else if (this.CNP.charAt(0) == '1' || this.CNP.charAt(0) == '5') {
+            this.gender = "M";
+        }
+    }
 
 
 }

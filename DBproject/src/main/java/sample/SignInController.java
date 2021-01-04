@@ -2,10 +2,9 @@ package sample;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import user.Donor;
+import user.User;
 
 import java.io.IOException;
 
@@ -31,7 +30,14 @@ public class SignInController extends ParentController {
             lblPasswordSignIn.setText("Please enter your password.");
             return;
         }
-
+        Donor donor = new Donor(txtEmailSignIn.getText(), passPasswordSignIn.getText());
+        if (database.isDonorInDatabaseSignIn(donor)) {
+            currentDonor = database.getDonorData(donor.getEmail());
+           //change scene
+        }/* else {
+            //display an error message somehow
+            //showAlert(Alert.AlertType.ERROR, owner, "Conectare nereușită", "Acest cont nu a fost înregistrat. Verificați credențialele de conectare sau apăsați pe butonul ”Înregistrare” pentru a vă crea un cont.");
+        }*/
         //go to next page
     }
 

@@ -1,12 +1,13 @@
 package sample;
 
+import database.DatabaseOperations;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.stage.Stage;
+import user.Donor;
 
 import java.io.IOException;
 
@@ -15,6 +16,9 @@ import java.io.IOException;
  */
 
 public class ParentController {
+
+    public final DatabaseOperations database = new DatabaseOperations();
+    public static Donor currentDonor;
 
     public void changeScene(ActionEvent event, String fxmlFilePath) throws IOException {
         Parent parent = FXMLLoader.load(getClass().getResource(fxmlFilePath));
