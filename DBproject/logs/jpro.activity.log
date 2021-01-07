@@ -38,3 +38,13 @@
 2020-12-26 15:37:26,912 [INFO] in application-akka.actor.default-dispatcher-5 - Starting the server
 2020-12-26 16:29:09,272 [INFO] in application-akka.actor.default-dispatcher-8 - Starting the server
 2020-12-26 21:57:13,115 [INFO] in application-akka.actor.default-dispatcher-8 - Starting the server
+2021-01-07 22:24:34,822 [INFO] in application-akka.actor.default-dispatcher-8 - Starting the server
+2021-01-07 22:30:25,228 [INFO] in application-akka.actor.default-dispatcher-6 - Starting the server
+2021-01-07 22:33:13,801 [INFO] in application-akka.actor.default-dispatcher-6 - Starting the server
+2021-01-07 22:40:08,132 [INFO] in application-akka.actor.default-dispatcher-6 - Starting the server
+2021-01-07 22:41:07,667 [INFO] in application-akka.actor.default-dispatcher-6 - Starting the server
+2021-01-07 22:42:08,484 [INFO] in application-akka.actor.default-dispatcher-8 - Starting the server
+2021-01-07 22:44:30,854 [INFO] in application-akka.actor.default-dispatcher-8 - Starting the server
+2021-01-07 22:54:22,487 [INFO] in application-akka.actor.default-dispatcher-8 - Starting the server
+2021-01-07 23:36:41,183 [INFO] in application-akka.actor.default-dispatcher-7 - Starting the server
+2021-01-07 23:41:54,992 [INFO] in application-akka.actor.default-dispatcher-6 - Starting the server

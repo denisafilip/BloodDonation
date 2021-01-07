@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 import user.BloodType;
 import user.County;
 import user.Donor;
@@ -28,6 +29,8 @@ public class SignUpController extends ParentController implements Initializable 
     @FXML private Label lblRH;
     @FXML private Label lblCounty;
     @FXML private Label lblCNP;
+    @FXML private AnchorPane anchorAlert;
+    @FXML private Button btnAlert;
 
     @FXML
     private ComboBox<String> comboCounty;
@@ -144,12 +147,18 @@ public class SignUpController extends ParentController implements Initializable 
             database.insertDonorInDatabase(donor);
             currentDonor = donor;
             //change scene to next page
+        } else {
+            anchorAlert.setVisible(true);
         }
 
     }
 
     public void goToSignIn(ActionEvent event) throws IOException {
         changeScene(event, "/signIn.fxml");
+    }
+
+    public void closeAlert() {
+        anchorAlert.setVisible(false);
     }
 
     /**

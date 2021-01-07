@@ -3,6 +3,7 @@ package sample;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 import user.Donor;
 import user.User;
 
@@ -11,14 +12,12 @@ import java.io.IOException;
 public class SignInController extends ParentController {
     @FXML private Label lblEmailSignIn;
     @FXML private Label lblPasswordSignIn;
-    @FXML
-    private TextField txtEmailSignIn;
-    @FXML
-    private PasswordField passPasswordSignIn;
-    @FXML
-    private Button btnRegister2;
-    @FXML
-    private Button btnSignIn2;
+    @FXML private TextField txtEmailSignIn;
+    @FXML private PasswordField passPasswordSignIn;
+    @FXML private AnchorPane anchorAlert;
+    @FXML private Button btnAlert;
+    @FXML private Button btnRegister2;
+    @FXML private Button btnSignIn2;
 
     public void signIn(ActionEvent event) {
         clearSignInLabels();
@@ -34,15 +33,18 @@ public class SignInController extends ParentController {
         if (database.isDonorInDatabaseSignIn(donor)) {
             currentDonor = database.getDonorData(donor.getEmail());
            //change scene
-        }/* else {
-            //display an error message somehow
-            //showAlert(Alert.AlertType.ERROR, owner, "Conectare nereușită", "Acest cont nu a fost înregistrat. Verificați credențialele de conectare sau apăsați pe butonul ”Înregistrare” pentru a vă crea un cont.");
-        }*/
+        } else {
+             anchorAlert.setVisible(true);
+        }
         //go to next page
     }
 
     public void goToSignUp(ActionEvent actionEvent) throws IOException {
         changeScene(actionEvent, "/signUp.fxml");
+    }
+
+    public void closeAlert() {
+        anchorAlert.setVisible(false);
     }
 
     public void clearSignInLabels() {
