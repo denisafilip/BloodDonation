@@ -9,10 +9,8 @@ import user.User;
 import java.io.IOException;
 
 public class SignInController extends ParentController {
-    @FXML
-    private Label lblEmailSignIn;
-    @FXML
-    private Label lblPasswordSignIn;
+    @FXML private Label lblEmailSignIn;
+    @FXML private Label lblPasswordSignIn;
     @FXML
     private TextField txtEmailSignIn;
     @FXML
@@ -35,12 +33,7 @@ public class SignInController extends ParentController {
         Donor donor = new Donor(txtEmailSignIn.getText(), passPasswordSignIn.getText());
         if (database.isDonorInDatabaseSignIn(donor)) {
             currentDonor = database.getDonorData(donor.getEmail());
-            try {
-                changeScene(event, "/mainMenu.fxml");
-            } catch (IOException ioException) {
-                ioException.printStackTrace();
-            }
-            //change scene
+           //change scene
         }/* else {
             //display an error message somehow
             //showAlert(Alert.AlertType.ERROR, owner, "Conectare nereușită", "Acest cont nu a fost înregistrat. Verificați credențialele de conectare sau apăsați pe butonul ”Înregistrare” pentru a vă crea un cont.");

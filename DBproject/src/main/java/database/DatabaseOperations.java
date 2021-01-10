@@ -1,28 +1,25 @@
 package database;
 
-import user.*;
+import user.BloodType;
+import user.County;
+import user.Donor;
+import user.Scraper;
 
 import java.sql.*;
 import java.util.ArrayList;
 
 public class DatabaseOperations {
 
-    private static final String GET_USER_ID = "SELECT id FROM Donor WHERE email = ?";
     private static final String INSERT_DONOR_IN_DATABASE = "INSERT INTO Donor (firstName, lastName, phoneNumber, dateOfBirth, age, email, password, gender, idBloodType, idCounty, cnp) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     private static final String GET_COUNTY_ID = "SELECT id FROM County WHERE name = ?";
     private static final String GET_BLOOD_TYPE_ID = "SELECT id FROM BloodType WHERE type = ? and rh = ?";
     private static final String CHECK_IF_DONOR_IN_DATABASE_SIGN_UP = "SELECT * from Donor WHERE email = ? and password = ? or CNP = ?";
     private static final String CHECK_IF_DONOR_IN_DATABASE_SIGN_IN = "SELECT * from Donor WHERE email = ? and password = ?";
-    private static final String GET_DONOR_DATA = "SELECT firstName, lastName, phoneNumber, dateOfBirth, age, email, password, gender, idBloodType, idCounty, cnp FROM Donor WHERE email = ?";
-    private static final String GET_BLOOD_TYPE = "SELECT type, rh FROM BloodType WHERE id = ?";
+    private static final String GET_DONOR_DATA = "SELECT firstName, lastName, phoneNumber, dateOfBirth, age, email, password, gender, idBloodType, idCounty FROM Donor WHERE email = ?";
+    private static final String GET_BLOOD_TYPE_TYPE = "SELECT type FROM BloodType WHERE id = ?";
+    private static final String GET_BLOOD_TYPE_RH = "SELECT rh FROM BloodType WHERE id = ?";
     private static final String GET_COUNTY = "SELECT * FROM County WHERE id = ?";
     private static final String INSERT_COUNTY_IN_DATABASE = "INSERT INTO County VALUES(?, ?)";
-    private static final String INSERT_APPOINTMENT_IN_DATABASE = "INSERT INTO Appointment VALUES(?, ?, ?)";
-    private static final String INSERT_CHECK_IN_FILE_IN_DATABASE = "INSERT INTO CheckInFile VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
-    private static final String GET_USER_AAPOINTMENTS = "SELECT date, idBloodBank FROM Appointment WHERE idDonor = ?";
-    private static final String GET_BLOOD_BANKS = "SELECT name, idCounty, phoneNumber FROM BloodBank";
-    private static final String GET_OCCUPIED_ON_DATE = "SELECT date FROM Appointment WHERE (DATEPART(yy, date) = ? " +
-            "and DATEPART(mm, date) = ? and DATEPART(dd, date) = ? and idBloodBank = ?)";
 
 
     /**
@@ -44,7 +41,6 @@ public class DatabaseOperations {
 
     /**
      * Function to insert donor into Donor database, after successful sign up.
-     *
      * @param donor - the donor that we want to insert into the database
      */
     public void insertDonorInDatabase(Donor donor) {
@@ -80,7 +76,7 @@ public class DatabaseOperations {
              PreparedStatement preparedStatement = conn.prepareStatement(GET_COUNTY_ID)) {
             preparedStatement.setString(1, donor.getCounty().getName());
             int idCounty = 0;
-            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+            try (ResultSet resultSet = preparedStatement.executeQuery()){
                 while (resultSet.next()) {
                     idCounty = resultSet.getInt("id");
                 }
@@ -110,7 +106,7 @@ public class DatabaseOperations {
 
     public BloodType getDonorBloodType(int idBloodType) throws SQLException {
         try (Connection conn = DatabaseConnectionFactory.getConnection();
-             PreparedStatement preparedStatement = conn.prepareStatement(GET_BLOOD_TYPE)) {
+             PreparedStatement preparedStatement = conn.prepareStatement(GET_BLOOD_TYPE_TYPE)) {
             preparedStatement.setInt(1, idBloodType);
 
             BloodType bloodType = null;
@@ -138,10 +134,8 @@ public class DatabaseOperations {
         }
     }
 
-    /**
-     * @return true if the donor is already found in the database. This is used only for sign up, by checking the combination email, password and
-     * separately, the CNP.
-     */
+    /** @return true if the donor is already found in the database. This is used only for sign up, by checking the combination email, password and
+     * separately, the CNP.  */
     public Boolean isDonorInDatabaseSignUp(Donor donor) {
         try (Connection conn = DatabaseConnectionFactory.getConnection();
              PreparedStatement preparedStatement = conn.prepareStatement(CHECK_IF_DONOR_IN_DATABASE_SIGN_UP)) {
@@ -158,10 +152,8 @@ public class DatabaseOperations {
         return true;
     }
 
-    /**
-     * @return true if the donor is found in the database. This is used only for sign in, by checking the username and password
-     * introduced by the donor.
-     */
+    /** @return true if the donor is found in the database. This is used only for sign in, by checking the username and password
+     * introduced by the donor.*/
     public Boolean isDonorInDatabaseSignIn(Donor donor) {
         try (Connection conn = DatabaseConnectionFactory.getConnection();
              PreparedStatement preparedStatement = conn.prepareStatement(CHECK_IF_DONOR_IN_DATABASE_SIGN_IN)) {
@@ -190,7 +182,7 @@ public class DatabaseOperations {
                     donor = new Donor(r.getString("firstName"), r.getString("lastName"),
                             r.getString("phoneNumber"), r.getDate("dateOfBirth").toLocalDate(),
                             r.getString("email"), r.getString("password"), getDonorBloodType(r.getInt("idBloodType")), getDonorCounty(r.getInt("idCounty")),
-                            r.getString("cnp"));
+                            r.getString("CNP"));
                 }
             }
             return donor;
@@ -199,110 +191,4 @@ public class DatabaseOperations {
         }
         return null;
     }
-
-    public int getDonorsId(String email) {
-        int id = 0;
-        try (Connection conn = DatabaseConnectionFactory.getConnection();
-             PreparedStatement preparedStatement = conn.prepareStatement(GET_USER_ID)) {
-            preparedStatement.setString(1, email);
-            try (ResultSet r = preparedStatement.executeQuery()) {
-                while (r.next()) {
-                    id = r.getInt("id");
-                }
-            }
-            return id;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return -1;
-    }
-
-    public ArrayList<BloodBank> getBloodBanks(ArrayList<County> counties) {
-        try (Connection conn = DatabaseConnectionFactory.getConnection();
-             PreparedStatement preparedStatement = conn.prepareStatement(GET_BLOOD_BANKS)) {
-            ArrayList<BloodBank> bloodBanks = new ArrayList<>();
-            try (ResultSet r = preparedStatement.executeQuery()) {
-                while (r.next()) {
-                    BloodBank bldbnk = new BloodBank(r.getString("name"), r.getString("phoneNumber"), counties.get(r.getInt("idCounty") - 1));
-                    bloodBanks.add(bldbnk);
-                }
-            }
-            return bloodBanks;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    public ArrayList<Appointment> getUsersAppointments(Donor donor, ArrayList<BloodBank> bloodBanks) {
-        try (Connection conn = DatabaseConnectionFactory.getConnection();
-             PreparedStatement preparedStatement = conn.prepareStatement(GET_USER_AAPOINTMENTS)) {
-            preparedStatement.setInt(1, getDonorsId(donor.getEmail()));
-            ArrayList<Appointment> appointments = new ArrayList<>();
-            try (ResultSet r = preparedStatement.executeQuery()) {
-                while (r.next()) {
-                    Appointment aux = new Appointment(r.getTimestamp("date"), donor, bloodBanks.get(r.getInt("idBloodBank") - 1));
-                    appointments.add(aux);
-
-                }
-            }
-            return appointments;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    public ArrayList<Timestamp> getOccupiedOnDate(String date, int idBloodBank) {
-        try (Connection conn = DatabaseConnectionFactory.getConnection();
-             PreparedStatement preparedStatement = conn.prepareStatement(GET_OCCUPIED_ON_DATE)) {
-            preparedStatement.setInt(1, Integer.parseInt(date.substring(0, 4)));
-            preparedStatement.setInt(2, Integer.parseInt(date.substring(5, 7)));
-            preparedStatement.setInt(3, Integer.parseInt(date.substring(8, 10)));
-            preparedStatement.setInt(4, idBloodBank);
-            ArrayList<Timestamp> dates = new ArrayList<>();
-            try (ResultSet r = preparedStatement.executeQuery()) {
-                while (r.next()) {
-                    Timestamp timestamp = r.getTimestamp("date");
-                    dates.add(timestamp);
-                }
-            }
-            return dates;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    public void insertAppointment(Timestamp timestamp, int donorId, int bloodBankId) {
-        try (Connection conn = DatabaseConnectionFactory.getConnection()) {
-            try (PreparedStatement preparedStatement = conn.prepareStatement(INSERT_APPOINTMENT_IN_DATABASE)) {
-                preparedStatement.setTimestamp(1, timestamp);
-                preparedStatement.setInt(2, donorId);
-                preparedStatement.setInt(3, bloodBankId);
-                preparedStatement.executeUpdate();
-            }
-        } catch (SQLException sqlException) {
-            sqlException.printStackTrace();
-        }
-    }
-
-    public void insertCheckInFile(int idDonor, boolean alcohol, boolean treatment, boolean tattoo, boolean rejected, boolean corona, boolean chronic, Timestamp timestamp) {
-        try (Connection conn = DatabaseConnectionFactory.getConnection()) {
-            try (PreparedStatement preparedStatement = conn.prepareStatement(INSERT_CHECK_IN_FILE_IN_DATABASE)) {
-                preparedStatement.setInt(1, idDonor);
-                preparedStatement.setBoolean(2, alcohol);
-                preparedStatement.setBoolean(3, treatment);
-                preparedStatement.setBoolean(4, tattoo);
-                preparedStatement.setBoolean(5, rejected);
-                preparedStatement.setBoolean(6, corona);
-                preparedStatement.setBoolean(7, chronic);
-                preparedStatement.setTimestamp(8, timestamp);
-                preparedStatement.executeUpdate();
-            }
-        } catch (SQLException sqlException) {
-            sqlException.printStackTrace();
-        }
-    }
-
 }
