@@ -3419,3 +3419,11 @@ java.lang.NullPointerException: Cannot invoke "Object.getClass()" because the re
 	at com.sun.glass.ui.monocle.RunnableProcessor.runLoop(RunnableProcessor.java:92)
 	at com.sun.glass.ui.monocle.RunnableProcessor.run(RunnableProcessor.java:51)
 	at java.base/java.lang.Thread.run(Thread.java:832)
+2021-01-10 20:55:35,564 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-10 20:55:35,612 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-10 20:55:39,324 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-10 20:55:39,484 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-10 20:57:07,574 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-10 20:57:07,654 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-10 20:57:12,326 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-10 20:57:12,421 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190

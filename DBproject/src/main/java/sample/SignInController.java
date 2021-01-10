@@ -34,6 +34,13 @@ public class SignInController extends ParentController {
         if (database.isDonorInDatabaseSignIn(donor)) {
             currentDonor = database.getDonorData(donor.getEmail());
            //change scene
+            try
+            {
+                changeScene(event, "/mainMenu.fxml");
+            }catch (IOException ioException)
+            {
+                ioException.printStackTrace();
+            }
         }/* else {
             //display an error message somehow
             //showAlert(Alert.AlertType.ERROR, owner, "Conectare nereușită", "Acest cont nu a fost înregistrat. Verificați credențialele de conectare sau apăsați pe butonul ”Înregistrare” pentru a vă crea un cont.");

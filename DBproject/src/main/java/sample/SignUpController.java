@@ -17,17 +17,28 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class SignUpController extends ParentController implements Initializable {
-    @FXML private Label lblFirstName;
-    @FXML private Label lblLastName;
-    @FXML private Label lblEmail;
-    @FXML private Label lblPassword;
-    @FXML private Label lblConfirmPassword;
-    @FXML private Label lblPhoneNumber;
-    @FXML private Label lblDOB;
-    @FXML private Label lblBloodType;
-    @FXML private Label lblRH;
-    @FXML private Label lblCounty;
-    @FXML private Label lblCNP;
+    @FXML
+    private Label lblFirstName;
+    @FXML
+    private Label lblLastName;
+    @FXML
+    private Label lblEmail;
+    @FXML
+    private Label lblPassword;
+    @FXML
+    private Label lblConfirmPassword;
+    @FXML
+    private Label lblPhoneNumber;
+    @FXML
+    private Label lblDOB;
+    @FXML
+    private Label lblBloodType;
+    @FXML
+    private Label lblRH;
+    @FXML
+    private Label lblCounty;
+    @FXML
+    private Label lblCNP;
 
     @FXML
     private ComboBox<String> comboCounty;
@@ -144,6 +155,11 @@ public class SignUpController extends ParentController implements Initializable 
             database.insertDonorInDatabase(donor);
             currentDonor = donor;
             //change scene to next page
+            try {
+                changeScene(event, "/mainMenu.fxml");
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
         }
 
     }
@@ -170,7 +186,6 @@ public class SignUpController extends ParentController implements Initializable 
     }
 
     /**
-     *
      * @return true if user's RH is positive, false if negative
      */
     public Boolean transformRHIntoBoolean() {
@@ -178,7 +193,6 @@ public class SignUpController extends ParentController implements Initializable 
     }
 
     /**
-     *
      * @return the ArrayList<String> containing strictly the county names
      */
     public ArrayList<String> createArrayWithCountyNames() {
@@ -190,7 +204,6 @@ public class SignUpController extends ParentController implements Initializable 
     }
 
     /**
-     *
      * @param counties - array containing all of Romania's counties
      * @return the County which the user chose when signing in - o sa incerc sa ma gandesc la o solutie mai ok pentru treaba asta, dar dunno acum
      */
