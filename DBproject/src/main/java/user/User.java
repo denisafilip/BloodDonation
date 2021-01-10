@@ -2,8 +2,10 @@ package user;
 
 import javafx.scene.control.Label;
 
+import java.nio.channels.OverlappingFileLockException;
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.ArrayList;
 
 public class User {
     private String firstName;
@@ -15,6 +17,7 @@ public class User {
     private BloodType bloodType;
     private County county;
     private String CNP;
+    private ArrayList<Appointment> appointments;
 
     public User() {
 
@@ -102,6 +105,14 @@ public class User {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public ArrayList<Appointment> getAppointments() {
+        return appointments;
+    }
+
+    public void setAppointments(ArrayList<Appointment> appointments) {
+        this.appointments = appointments;
     }
 
     /**

@@ -9,7 +9,7 @@ import javafx.scene.control.Label;
 
 import java.io.IOException;
 
-public class CheckInFile extends ParentController {
+public class CheckInFileController extends ParentController {
 
     ObservableList<String> choices = FXCollections.observableArrayList("Yes", "No");
 
@@ -64,8 +64,11 @@ public class CheckInFile extends ParentController {
             nextButton.setText("Next");
             nextButton.setVisible(true);
             nextButton.setOnAction(e -> {
+                database.insertAppointment(currentTimeStamp, database.getDonorsId(currentDonor.getEmail()), bloodBanks.indexOf(currentBloodBank) + 1);
+                database.insertCheckInFile(database.getDonorsId(currentDonor.getEmail()), alcoholChoiceBox.getValue().equals("Yes"), treatmentChoiceBox.getValue().equals("Yes"), tattooChoiceBox.getValue().equals("Yes"),
+                        rejectedChoiceBox.getValue().equals("Yes"), covid19ChoiceBox.getValue().equals("Yes"), chronicChoiceBox.getValue().equals("Yes"), currentTimeStamp);
                 try {
-                    changeScene(e, "/Appointments.fxml");
+                    changeScene(e, "/signIn.fxml");
                 } catch (IOException ioException) {
                     ioException.printStackTrace();
                 }
