@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 import user.BloodType;
 import user.County;
 import user.Donor;
@@ -17,59 +18,40 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class SignUpController extends ParentController implements Initializable {
-    @FXML
-    private Label lblFirstName;
-    @FXML
-    private Label lblLastName;
-    @FXML
-    private Label lblEmail;
-    @FXML
-    private Label lblPassword;
-    @FXML
-    private Label lblConfirmPassword;
-    @FXML
-    private Label lblPhoneNumber;
-    @FXML
-    private Label lblDOB;
-    @FXML
-    private Label lblBloodType;
-    @FXML
-    private Label lblRH;
-    @FXML
-    private Label lblCounty;
-    @FXML
-    private Label lblCNP;
+    @FXML private Label lblFirstName;
+    @FXML private Label lblLastName;
+    @FXML private Label lblEmail;
+    @FXML private Label lblPassword;
+    @FXML private Label lblConfirmPassword;
+    @FXML private Label lblPhoneNumber;
+    @FXML private Label lblDOB;
+    @FXML private Label lblBloodType;
+    @FXML private Label lblRH;
+    @FXML private Label lblCounty;
+    @FXML private Label lblCNP;
+    @FXML private AnchorPane anchorAlert;
+    @FXML private Button btnAlert;
 
     @FXML
     private ComboBox<String> comboCounty;
-    private Scraper scraper = new Scraper();
-    private ArrayList<County> counties = scraper.webScrapingCounties();
+    private final Scraper scraper = new Scraper();
+    private final ArrayList<County> counties = scraper.webScrapingCounties();
     @FXML
     private ComboBox<String> comboBloodType;
     private final ObservableList<String> bloodTypeOptions = FXCollections.observableArrayList("01", "A2", "B3", "AB4");
     @FXML
     private ComboBox<String> comboRH;
     private final ObservableList<String> RHOptions = FXCollections.observableArrayList("positive", "negative");
-    @FXML
-    private DatePicker dateDOB;
-    @FXML
-    private TextField txtFirstName;
-    @FXML
-    private TextField txtLastName;
-    @FXML
-    private TextField txtEmail;
-    @FXML
-    private TextField txtCNP;
-    @FXML
-    private TextField txtPhoneNumber;
-    @FXML
-    private PasswordField passPassword;
-    @FXML
-    private PasswordField passConfirmPassword;
-    @FXML
-    private Button btnRegister;
-    @FXML
-    private Button btnSignIn;
+    @FXML private DatePicker dateDOB;
+    @FXML private TextField txtFirstName;
+    @FXML private TextField txtLastName;
+    @FXML private TextField txtEmail;
+    @FXML private TextField txtCNP;
+    @FXML private TextField txtPhoneNumber;
+    @FXML private PasswordField passPassword;
+    @FXML private PasswordField passConfirmPassword;
+    @FXML private Button btnRegister;
+    @FXML private Button btnSignIn;
 
     public void signUp(ActionEvent event) throws IOException {
         clearErrorLabels();
@@ -160,6 +142,8 @@ public class SignUpController extends ParentController implements Initializable 
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
+        } else {
+            anchorAlert.setVisible(true);
         }
 
     }
@@ -214,6 +198,10 @@ public class SignUpController extends ParentController implements Initializable 
             }
         }
         return null;
+    }
+
+    public void closeAlert() {
+        anchorAlert.setVisible(false);
     }
 
     @Override
