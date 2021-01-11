@@ -4,11 +4,15 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import user.Appointment;
 
 import java.io.IOException;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 
 public class AppointmentsController extends ParentController {
@@ -28,6 +32,8 @@ public class AppointmentsController extends ParentController {
     private Button twelvePM;
     @FXML
     private Button onePM;
+    @FXML
+    private Label dateLabel;
 
     @FXML
     private void set8am() {
@@ -173,18 +179,49 @@ public class AppointmentsController extends ParentController {
 
     @FXML
     private void setAppointment(ActionEvent event) {
-        if (!textHour.getText().isEmpty()) {
-            String[] parts = appointmentDate.getValue().toString().split("-");
-            Timestamp timestamp = Timestamp.valueOf(String.format("%04d-%02d-%02d %02d:00:00", Integer.parseInt(parts[0]),
-                    Integer.parseInt(parts[1]), Integer.parseInt(parts[2]), Integer.parseInt(textHour.getText())));
-            currentTimeStamp = timestamp;
+        if (!textHour.getText().isEmpty() && appointmentDate.getValue() != null) {
+            dateLabel.setText("");
+            if (appointmentDate.getValue().isBefore(LocalDate.now())) {
+                dateLabel.setText("The date of your appointment must be in the future.");
+                return;
+            }
+            for (Appointment appointment : currentDonor.getAppointments()) {
+                String[] parts = appointmentDate.getValue().toString().split("-");
+                Timestamp timestamp = Timestamp.valueOf(String.format("%04d-%02d-%02d %02d:00:00", Integer.parseInt(parts[0]),
+                        Integer.parseInt(parts[1]), Integer.parseInt(parts[2]), Integer.parseInt(textHour.getText())));
+
+                String[] parts_app = appointment.getAppointmentDate().toString().split("-");
+                boolean canDonate = true;
+                if (parts[0].equals(parts_app[0])) {
+                    if (Math.abs(Integer.parseInt(parts[1]) - Integer.parseInt(parts_app[1])) < 3) {
+                        canDonate = false;
+                    } else if (Math.abs(Integer.parseInt(parts[1]) - Integer.parseInt(parts_app[1])) == 3) {
+                        if (Integer.parseInt(parts[1]) > Integer.parseInt(parts_app[1])) {
+                            System.out.println(Integer.parseInt(parts[1]) + " " + Integer.parseInt(parts_app[1]));
+                            System.out.println(parts[2].substring(0, 2) + " " + parts_app[2].substring(0, 2));
+                            if (Integer.parseInt(parts[2].substring(0, 2)) < Integer.parseInt(parts_app[2].substring(0, 2))) {
+                                canDonate = false;
+                            }
+                        } else {
+                            if (Integer.parseInt(parts[2].substring(0, 2)) > Integer.parseInt(parts_app[2].substring(0, 2))) {
+                                canDonate = false;
+                            }
+                        }
+                    }
+                }
+                if (!canDonate) {
+                    dateLabel.setText("You cannot donate twice in 3 months. Closest: " + appointment.getAppointmentDate());
+                    return;
+                }
+                currentTimeStamp = timestamp;
+            }
             try {
                 changeScene(event, "/checkInFile.fxml");
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
         } else {
-            System.out.println("Empty hour!");
+            dateLabel.setText("You must first specify a date and an hour!");
         }
     }
 

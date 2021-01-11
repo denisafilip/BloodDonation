@@ -12,7 +12,7 @@ import java.sql.SQLException;
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
         FXMLLoader myLoader = new FXMLLoader(getClass().getResource("/signUp.fxml"));
         Parent root = myLoader.load();
         primaryStage.setTitle("Sign Up");
@@ -22,7 +22,7 @@ public class Main extends Application {
     }
 
 
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args)   {
         launch(args);
     }
 }
