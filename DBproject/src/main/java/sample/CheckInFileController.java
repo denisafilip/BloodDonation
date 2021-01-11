@@ -3,9 +3,7 @@ package sample;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 
 import java.io.IOException;
 
@@ -25,6 +23,8 @@ public class CheckInFileController extends ParentController {
     private ChoiceBox<String> covid19ChoiceBox;
     @FXML
     private ChoiceBox<String> rejectedChoiceBox;
+    @FXML
+    private TextField weightTxt;
     @FXML
     private Label warningLabel;
     @FXML
@@ -49,17 +49,19 @@ public class CheckInFileController extends ParentController {
                 treatmentChoiceBox.getValue() == null ||
                 chronicChoiceBox.getValue() == null ||
                 covid19ChoiceBox.getValue() == null ||
-                rejectedChoiceBox.getValue() == null) {
+                rejectedChoiceBox.getValue() == null ||
+                weightTxt.getText() == null) {
             warningLabel.setText("Please fill in all the categories first.");
         } else if (alcoholChoiceBox.getValue().equals("No") &&
                 tattooChoiceBox.getValue().equals("No") &&
                 chronicChoiceBox.getValue().equals("No") &&
                 covid19ChoiceBox.getValue().equals("No") &&
-                treatmentChoiceBox.getValue().equals("No")) {
+                treatmentChoiceBox.getValue().equals("No") &&
+                Integer.parseInt(weightTxt.getText()) > 50) {
             warningLabel.setStyle(
                     "-fx-text-fill: black;"
             );
-            warningLabel.setText("You are eligible to donate. Press next.");
+            warningLabel.setText("You are eligible to donate. Please press next.");
             submitButton.setDisable(true);
             nextButton.setText("Next");
             nextButton.setVisible(true);
@@ -67,6 +69,7 @@ public class CheckInFileController extends ParentController {
                 database.insertAppointment(currentTimeStamp, database.getDonorsId(currentDonor.getEmail()), bloodBanks.indexOf(currentBloodBank) + 1);
                 database.insertCheckInFile(database.getDonorsId(currentDonor.getEmail()), alcoholChoiceBox.getValue().equals("Yes"), treatmentChoiceBox.getValue().equals("Yes"), tattooChoiceBox.getValue().equals("Yes"),
                         rejectedChoiceBox.getValue().equals("Yes"), covid19ChoiceBox.getValue().equals("Yes"), chronicChoiceBox.getValue().equals("Yes"), currentTimeStamp);
+                database.updateUserWeight(currentDonor, Integer.parseInt(weightTxt.getText()));
                 try {
                     changeScene(e, "/signIn.fxml");
                 } catch (IOException ioException) {
@@ -77,7 +80,7 @@ public class CheckInFileController extends ParentController {
             warningLabel.setStyle(
                     "-fx-text-fill: red;"
             );
-            warningLabel.setText("You are not eligible to donate. Press exit.");
+            warningLabel.setText("You are not eligible to donate. Please press exit.");
             submitButton.setDisable(true);
             nextButton.setText("Exit");
             nextButton.setVisible(true);
