@@ -107,6 +107,26 @@
                   <Label fx:id="lblCNP" layoutX="28.0" layoutY="611.0" prefHeight="20.0" prefWidth="502.0" textFill="RED" />
                </children>
             </AnchorPane>
+            <AnchorPane fx:id="anchorAlert" layoutX="312.0" layoutY="298.0" prefHeight="162.0" prefWidth="410.0" style="-fx-background-color: #ffffff; -fx-background-radius: 3px;" visible="false">
+               <children>
+                  <Button fx:id="btnAlert" layoutX="360.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeAlert" prefWidth="28.0" style="-fx-background-color: #cf1608;" text="X" textFill="WHITE" AnchorPane.bottomAnchor="118.0" AnchorPane.leftAnchor="360.0" AnchorPane.rightAnchor="20.799999999999976" AnchorPane.topAnchor="14.0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label alignment="CENTER" layoutX="28.0" layoutY="34.0" prefHeight="104.0" prefWidth="354.0" text="This email is already registered. Please sign up with another email or go to sign in." textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="24.400000000000006" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="34.0">
+                     <font>
+                        <Font name="Arial" size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+               <effect>
+                  <DropShadow height="15.77" offsetX="3.0" radius="7.385" width="15.77" />
+               </effect>
+            </AnchorPane>
          </children>
          <effect>
             <DropShadow offsetX="2.5" />

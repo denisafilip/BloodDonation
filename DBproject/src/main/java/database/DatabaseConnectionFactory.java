@@ -7,8 +7,8 @@ import java.sql.SQLException;
 
 public class DatabaseConnectionFactory {
     private static final String DATABASE_URL = "jdbc:sqlserver://localhost:1433;databaseName=DB_Project;";
-    private static final  String DATABASE_USERNAME = "alex";
-    private static final  String DATABASE_PASSWORD = "1234567";
+    private static final  String DATABASE_USERNAME = "denisafilip";
+    private static final  String DATABASE_PASSWORD = "PasswordDB";
     private static final BasicDataSource connectionPool = new BasicDataSource();
 
     static {

@@ -3,6 +3,7 @@ package sample;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 import user.Donor;
 import user.User;
 
@@ -15,6 +16,8 @@ public class SignInController extends ParentController {
     private TextField txtEmailSignIn;
     @FXML
     private PasswordField passPasswordSignIn;
+    @FXML private AnchorPane anchorAlert;
+    @FXML private Button btnAlert;
     @FXML
     private Button btnRegister2;
     @FXML
@@ -34,22 +37,22 @@ public class SignInController extends ParentController {
         if (database.isDonorInDatabaseSignIn(donor)) {
             currentDonor = database.getDonorData(donor.getEmail());
            //change scene
-            try
-            {
+            try {
                 changeScene(event, "/mainMenu.fxml");
-            }catch (IOException ioException)
-            {
+            } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
-        }/* else {
-            //display an error message somehow
-            //showAlert(Alert.AlertType.ERROR, owner, "Conectare nereușită", "Acest cont nu a fost înregistrat. Verificați credențialele de conectare sau apăsați pe butonul ”Înregistrare” pentru a vă crea un cont.");
-        }*/
-        //go to next page
+        } else {
+            anchorAlert.setVisible(true);
+        }
     }
 
     public void goToSignUp(ActionEvent actionEvent) throws IOException {
         changeScene(actionEvent, "/signUp.fxml");
+    }
+
+    public void closeAlert() {
+        anchorAlert.setVisible(false);
     }
 
     public void clearSignInLabels() {
