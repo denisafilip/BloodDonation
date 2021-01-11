@@ -23,6 +23,7 @@ public class DatabaseOperations {
     private static final String GET_BLOOD_BANKS = "SELECT name, idCounty, phoneNumber FROM BloodBank";
     private static final String GET_OCCUPIED_ON_DATE = "SELECT date FROM Appointment WHERE (DATEPART(yy, date) = ? " +
             "and DATEPART(mm, date) = ? and DATEPART(dd, date) = ? and idBloodBank = ?)";
+    private static final String UPDATE_USER_WEIGHT = "UPDATE Donor SET weight = ? WHERE email = ?";
 
 
     /**
@@ -298,6 +299,18 @@ public class DatabaseOperations {
                 preparedStatement.setBoolean(6, corona);
                 preparedStatement.setBoolean(7, chronic);
                 preparedStatement.setTimestamp(8, timestamp);
+                preparedStatement.executeUpdate();
+            }
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+        }
+    }
+
+    public void updateUserWeight(Donor donor, Integer weight) {
+        try (Connection conn = DatabaseConnectionFactory.getConnection()) {
+            try (PreparedStatement preparedStatement = conn.prepareStatement(UPDATE_USER_WEIGHT)) {
+                preparedStatement.setInt(1, weight);
+                preparedStatement.setString(2, donor.getEmail());
                 preparedStatement.executeUpdate();
             }
         } catch (SQLException sqlException) {
