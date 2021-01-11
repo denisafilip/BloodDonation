@@ -3634,3 +3634,13 @@ java.lang.NullPointerException: Cannot invoke "Object.getClass()" because the re
 2021-01-11 19:10:27,178 [WARN] from controllers.jpro in application-akka.actor.default-dispatcher-8 - resource not available: java.io.FileNotFoundException: C:\Users\Denisa\IdeaProjects\DatabaseProject\DBproject\target\classes\assets\PinClipart.com_blood-spatter-clip-art_3185194.png (The system cannot find the file specified)
 2021-01-11 19:10:27,183 [WARN] from controllers.jpro in application-akka.actor.default-dispatcher-8 - resource not available: java.io.FileNotFoundException: C:\Users\Denisa\IdeaProjects\DatabaseProject\DBproject\target\classes\assets\transfuzii2_icon.png (The system cannot find the file specified)
 2021-01-11 19:10:27,183 [WARN] from controllers.jpro in application-akka.actor.default-dispatcher-16 - resource not available: java.io.FileNotFoundException: C:\Users\Denisa\IdeaProjects\DatabaseProject\DBproject\target\classes\assets\transfuzii3_icon.png (The system cannot find the file specified)
+2021-01-11 20:08:31,634 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-11 20:08:31,746 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-11 20:11:16,548 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-11 20:11:16,642 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-11 20:16:49,774 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-11 20:16:49,870 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-11 20:17:59,183 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-11 20:17:59,277 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-11 20:19:56,675 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-11 20:19:56,802 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
