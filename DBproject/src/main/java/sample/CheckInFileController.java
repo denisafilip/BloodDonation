@@ -70,6 +70,7 @@ public class CheckInFileController extends ParentController {
                 database.insertCheckInFile(database.getDonorsId(currentDonor.getEmail()), alcoholChoiceBox.getValue().equals("Yes"), treatmentChoiceBox.getValue().equals("Yes"), tattooChoiceBox.getValue().equals("Yes"),
                         rejectedChoiceBox.getValue().equals("Yes"), covid19ChoiceBox.getValue().equals("Yes"), chronicChoiceBox.getValue().equals("Yes"), currentTimeStamp);
                 database.updateUserWeight(currentDonor, Integer.parseInt(weightTxt.getText()));
+                database.addBloodStock(bloodBanks.indexOf(currentBloodBank) + 1, currentDonor.getBloodType());
                 try {
                     changeScene(e, "/signIn.fxml");
                 } catch (IOException ioException) {
