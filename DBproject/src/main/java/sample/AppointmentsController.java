@@ -193,7 +193,7 @@ public class AppointmentsController extends ParentController {
                     return;
                 }
             } else {
-                if (!Year.of(appointmentDate.getValue().getYear()).equals(Year.now()) && !Year.of(appointmentDate.getValue().getYear()).equals(Year.of(2022))) {
+                if (!Year.of(appointmentDate.getValue().getYear()).equals(Year.now()) && !Year.of(appointmentDate.getValue().getYear()).equals(Year.of(Integer.parseInt(String.valueOf(Year.now())) + 1))) {
                     dateLabel.setText("You can only make appointments for the current and next year.");
                     return;
                 }
