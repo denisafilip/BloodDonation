@@ -18,6 +18,13 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class SignUpController extends ParentController implements Initializable {
+    private static final String HOVERED_BUTTON_STYLE_SIGN_IN = "-fx-text-fill: #ffffff; -fx-background-color:  #2a6fb5;";
+    private static final String IDLE_BUTTON_STYLE_SIGN_IN = "-fx-text-fill: #000000; -fx-background-color: #6aaaeb;";
+
+    private static final String HOVERED_BUTTON_STYLE_REGISTER = "-fx-text-fill: #ffffff; -fx-background-color:  #b83930;";
+    private static final String IDLE_BUTTON_STYLE_REGISTER = "-fx-text-fill: #ffffff; -fx-background-color:  #e8574d;";
+
+
     @FXML private Label lblFirstName;
     @FXML private Label lblLastName;
     @FXML private Label lblEmail;
@@ -136,6 +143,7 @@ public class SignUpController extends ParentController implements Initializable 
         }
         if (donor.verifyDateOfBirth() != 0) {
             lblDOB.setText("The date of birth does not coincide with the one in the CNP.");
+            return;
         }
         if (!database.isDonorInDatabaseSignUp(donor)) {
             database.insertDonorInDatabase(donor);
@@ -215,5 +223,11 @@ public class SignUpController extends ParentController implements Initializable 
         ArrayList<String> countyNames = createArrayWithCountyNames();
         ObservableList<String> countyOptions = FXCollections.observableArrayList(countyNames);
         comboCounty.setItems(countyOptions);
+
+        btnSignIn.setOnMouseEntered(e -> btnSignIn.setStyle(HOVERED_BUTTON_STYLE_SIGN_IN));
+        btnSignIn.setOnMouseExited(e -> btnSignIn.setStyle(IDLE_BUTTON_STYLE_SIGN_IN));
+
+        btnRegister.setOnMouseEntered(e -> btnRegister.setStyle(HOVERED_BUTTON_STYLE_REGISTER));
+        btnRegister.setOnMouseExited(e -> btnRegister.setStyle(IDLE_BUTTON_STYLE_REGISTER));
     }
 }
