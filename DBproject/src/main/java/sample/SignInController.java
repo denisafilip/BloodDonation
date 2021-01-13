@@ -18,6 +18,7 @@ public class SignInController extends ParentController {
     private PasswordField passPasswordSignIn;
     @FXML private AnchorPane anchorAlert;
     @FXML private Button btnAlert;
+    @FXML private Label lblAlert;
     @FXML
     private Button btnRegister2;
     @FXML
@@ -43,7 +44,13 @@ public class SignInController extends ParentController {
                 ioException.printStackTrace();
             }
         } else {
-            anchorAlert.setVisible(true);
+            if (database.isEmailInDatabase(donor)) {
+                 anchorAlert.setVisible(true);
+                 lblAlert.setText("The password is incorrect. Try again.");
+            } else {
+                anchorAlert.setVisible(true);
+                lblAlert.setText("This email is not registered. Please create a new account.");
+            }
         }
     }
 

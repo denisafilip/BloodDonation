@@ -43,4 +43,9 @@ public class Donor extends User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public boolean isEmailValid() {
+        String regex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+        return this.email.matches(regex);
+    }
 }

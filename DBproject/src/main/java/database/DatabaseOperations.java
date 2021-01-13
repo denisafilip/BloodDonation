@@ -13,6 +13,7 @@ public class DatabaseOperations {
     private static final String GET_BLOOD_TYPE_ID = "SELECT id FROM BloodType WHERE type = ? and rh = ?";
     private static final String CHECK_IF_DONOR_IN_DATABASE_SIGN_UP = "SELECT * from Donor WHERE email = ? and password = ? or CNP = ?";
     private static final String CHECK_IF_DONOR_IN_DATABASE_SIGN_IN = "SELECT * from Donor WHERE email = ? and password = ?";
+    private static final String CHECK_IF_EMAIL_IN_DATABASE = "SELECT * from Donor WHERE email = ?";
     private static final String GET_DONOR_DATA = "SELECT firstName, lastName, phoneNumber, dateOfBirth, age, email, password, gender, idBloodType, idCounty, cnp FROM Donor WHERE email = ?";
     private static final String GET_BLOOD_TYPE = "SELECT type, rh FROM BloodType WHERE id = ?";
     private static final String GET_COUNTY = "SELECT * FROM County WHERE id = ?";
@@ -168,6 +169,20 @@ public class DatabaseOperations {
              PreparedStatement preparedStatement = conn.prepareStatement(CHECK_IF_DONOR_IN_DATABASE_SIGN_IN)) {
             preparedStatement.setString(1, donor.getEmail());
             preparedStatement.setString(2, donor.getPassword());
+
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                return resultSet.next();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public Boolean isEmailInDatabase(Donor donor) {
+        try (Connection conn = DatabaseConnectionFactory.getConnection();
+             PreparedStatement preparedStatement = conn.prepareStatement(CHECK_IF_EMAIL_IN_DATABASE)) {
+            preparedStatement.setString(1, donor.getEmail());
 
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 return resultSet.next();
