@@ -18,10 +18,11 @@ public class DatabaseOperations {
     private static final String GET_BLOOD_TYPE = "SELECT type, rh FROM BloodType WHERE id = ?";
     private static final String GET_COUNTY = "SELECT * FROM County WHERE id = ?";
     private static final String INSERT_COUNTY_IN_DATABASE = "INSERT INTO County VALUES(?, ?)";
-    private static final String INSERT_APPOINTMENT_IN_DATABASE = "INSERT INTO Appointment VALUES(?, ?, ?)";
+    private static final String INSERT_APPOINTMENT_IN_DATABASE = "INSERT INTO Appointment VALUES(?, ?, ?, ?)";
     private static final String INSERT_CHECK_IN_FILE_IN_DATABASE = "INSERT INTO CheckInFile VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
-    private static final String GET_USER_AAPOINTMENTS = "SELECT date, idBloodBank FROM Appointment WHERE idDonor = ?";
+    private static final String GET_USER_AAPOINTMENTS = "SELECT date, idBloodBank, idHospital FROM Appointment WHERE idDonor = ?";
     private static final String GET_BLOOD_BANKS = "SELECT name, idCounty, phoneNumber FROM BloodBank";
+    private static final String GET_HOSPITALS = "SELECT name, idCounty, phoneNumber FROM Hospital";
     private static final String GET_OCCUPIED_ON_DATE = "SELECT date FROM Appointment WHERE (DATEPART(yy, date) = ? " +
             "and DATEPART(mm, date) = ? and DATEPART(dd, date) = ? and idBloodBank = ?)";
     private static final String UPDATE_USER_WEIGHT = "UPDATE Donor SET weight = ? WHERE email = ?";
@@ -250,14 +251,31 @@ public class DatabaseOperations {
         return null;
     }
 
-    public ArrayList<Appointment> getUsersAppointments(Donor donor, ArrayList<BloodBank> bloodBanks) {
+    public ArrayList<Hospital> getHospitals(ArrayList<County> counties){
+        try (Connection conn = DatabaseConnectionFactory.getConnection();
+             PreparedStatement preparedStatement = conn.prepareStatement(GET_HOSPITALS)) {
+            ArrayList<Hospital> hospital = new ArrayList<>();
+            try (ResultSet r = preparedStatement.executeQuery()) {
+                while (r.next()) {
+                    Hospital newHospital = new Hospital(r.getString("name"), counties.get(r.getInt("idCounty") - 1), r.getString("phoneNumber"));
+                    hospital.add(newHospital);
+                }
+            }
+            return hospital;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public ArrayList<Appointment> getUsersAppointments(Donor donor, ArrayList<BloodBank> bloodBanks, ArrayList<Hospital> hospitals) {
         try (Connection conn = DatabaseConnectionFactory.getConnection();
              PreparedStatement preparedStatement = conn.prepareStatement(GET_USER_AAPOINTMENTS)) {
             preparedStatement.setInt(1, getDonorsId(donor.getEmail()));
             ArrayList<Appointment> appointments = new ArrayList<>();
             try (ResultSet r = preparedStatement.executeQuery()) {
                 while (r.next()) {
-                    Appointment aux = new Appointment(r.getTimestamp("date"), donor, bloodBanks.get(r.getInt("idBloodBank") - 1));
+                    Appointment aux = new Appointment(r.getTimestamp("date"), donor, bloodBanks.get(r.getInt("idBloodBank") - 1), hospitals.get(r.getInt("idHospital") - 1));
                     appointments.add(aux);
 
                 }
@@ -290,12 +308,13 @@ public class DatabaseOperations {
         return null;
     }
 
-    public void insertAppointment(Timestamp timestamp, int donorId, int bloodBankId) {
+    public void insertAppointment(Timestamp timestamp, int donorId, int bloodBankId, int idHospital) {
         try (Connection conn = DatabaseConnectionFactory.getConnection()) {
             try (PreparedStatement preparedStatement = conn.prepareStatement(INSERT_APPOINTMENT_IN_DATABASE)) {
                 preparedStatement.setTimestamp(1, timestamp);
                 preparedStatement.setInt(2, donorId);
                 preparedStatement.setInt(3, bloodBankId);
+                preparedStatement.setInt(4, idHospital);
                 preparedStatement.executeUpdate();
             }
         } catch (SQLException sqlException) {

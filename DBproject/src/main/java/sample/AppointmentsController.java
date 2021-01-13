@@ -185,11 +185,11 @@ public class AppointmentsController extends ParentController {
                 dateLabel.setText("The date of your appointment must be in the future.");
                 return;
             }
-            for (Appointment appointment : currentDonor.getAppointments()) {
-                String[] parts = appointmentDate.getValue().toString().split("-");
-                Timestamp timestamp = Timestamp.valueOf(String.format("%04d-%02d-%02d %02d:00:00", Integer.parseInt(parts[0]),
-                        Integer.parseInt(parts[1]), Integer.parseInt(parts[2]), Integer.parseInt(textHour.getText())));
+            String[] parts = appointmentDate.getValue().toString().split("-");
+            Timestamp timestamp = Timestamp.valueOf(String.format("%04d-%02d-%02d %02d:00:00", Integer.parseInt(parts[0]),
+                    Integer.parseInt(parts[1]), Integer.parseInt(parts[2]), Integer.parseInt(textHour.getText())));
 
+            for (Appointment appointment : currentDonor.getAppointments()) {
                 String[] parts_app = appointment.getAppointmentDate().toString().split("-");
                 boolean canDonate = true;
                 if (parts[0].equals(parts_app[0])) {
@@ -213,8 +213,8 @@ public class AppointmentsController extends ParentController {
                     dateLabel.setText("You cannot donate twice in 3 months. Closest: " + appointment.getAppointmentDate());
                     return;
                 }
-                currentTimeStamp = timestamp;
             }
+            currentTimeStamp = timestamp;
             try {
                 changeScene(event, "/checkInFile.fxml");
             } catch (IOException ioException) {
