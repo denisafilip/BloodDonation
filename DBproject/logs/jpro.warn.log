@@ -4135,3 +4135,264 @@ java.lang.NullPointerException: Cannot invoke "Object.getClass()" because the re
 	at java.base/java.lang.Thread.run(Thread.java:832)
 2021-01-13 20:31:20,205 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
 2021-01-13 20:31:20,285 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 20:36:24,917 [ERROR] from akka.io.TcpListener in application-akka.actor.default-dispatcher-6 - Bind failed for TCP channel on endpoint [/0.0.0.0:8080]
+java.net.BindException: [/0.0.0.0:8080] Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:550)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:249)
+	at java.base/sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:88)
+	at akka.io.TcpListener.liftedTree1$1(TcpListener.scala:60)
+	at akka.io.TcpListener.<init>(TcpListener.scala:57)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at akka.util.Reflect$.instantiate(Reflect.scala:70)
+	at akka.actor.ArgsReflectConstructor.produce(IndirectActorProducer.scala:101)
+	at akka.actor.Props.newActor(Props.scala:226)
+	at akka.actor.ActorCell.newActor(ActorCell.scala:611)
+	at akka.actor.ActorCell.create(ActorCell.scala:637)
+	at akka.actor.ActorCell.invokeAll$1(ActorCell.scala:511)
+	at akka.actor.ActorCell.systemInvoke(ActorCell.scala:533)
+	at akka.dispatch.Mailbox.processAllSystemMessages(Mailbox.scala:295)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:243)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1016)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1665)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1598)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+2021-01-13 20:36:27,293 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 20:36:27,341 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 20:36:45,645 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 20:36:45,726 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 20:38:54,237 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 20:38:54,317 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 20:39:36,701 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 20:39:36,781 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 20:41:32,760 [ERROR] from akka.io.TcpListener in application-akka.actor.default-dispatcher-8 - Bind failed for TCP channel on endpoint [/0.0.0.0:8080]
+java.net.BindException: [/0.0.0.0:8080] Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:550)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:249)
+	at java.base/sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:88)
+	at akka.io.TcpListener.liftedTree1$1(TcpListener.scala:60)
+	at akka.io.TcpListener.<init>(TcpListener.scala:57)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at akka.util.Reflect$.instantiate(Reflect.scala:70)
+	at akka.actor.ArgsReflectConstructor.produce(IndirectActorProducer.scala:101)
+	at akka.actor.Props.newActor(Props.scala:226)
+	at akka.actor.ActorCell.newActor(ActorCell.scala:611)
+	at akka.actor.ActorCell.create(ActorCell.scala:637)
+	at akka.actor.ActorCell.invokeAll$1(ActorCell.scala:511)
+	at akka.actor.ActorCell.systemInvoke(ActorCell.scala:533)
+	at akka.dispatch.Mailbox.processAllSystemMessages(Mailbox.scala:295)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:243)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1016)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1665)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1598)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+2021-01-13 20:41:33,407 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 20:41:33,469 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 20:43:58,129 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 20:43:58,207 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 20:56:00,329 [ERROR] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Error while processing the input: MouseEventToken(MouseMoved,1082.4000244140625,543.6000366210938,MouseButtonToken(2),false,false,false,false,false,false,false,false) app: window: null
+java.lang.NullPointerException: Cannot invoke "Object.getClass()" because the return value of "simplefx.util.ReflectionUtil$UseReflection.ref()" is null
+	at simplefx.util.ReflectionUtil$UseReflection.applyDynamic(ReflectionUtil.scala:18)
+	at com.jpro.meta.tk.UtilSceneTKListener$ExtendView.view(UtilSceneTKListener.scala:24)
+	at com.jpro.meta.tk.UtilSceneTKListener$ExtendView.isMonocle(UtilSceneTKListener.scala:25)
+	at com.jpro.meta.tk.SceneInputListener.processInputInScene(SceneInputListener.scala:144)
+	at com.jpro.meta.tk.SceneInputListener.processInput(SceneInputListener.scala:132)
+	at com.jpro.meta.tk.SceneInputListener.processInputs(SceneInputListener.scala:101)
+	at com.jpro.meta.tk.SceneInputListener.$anonfun$new$4(SceneInputListener.scala:42)
+	at simplefx.cores.standard.parts.CoreTimeEvent.$anonfun$runAsAnimation$1(CoreTimeEvent.scala:64)
+	at simplefx.cores.standard.parts.CoreTimeEvent$$anon$2.handle(CoreTimeEvent.scala:46)
+	at javafx.animation.AnimationTimer$AnimationTimerReceiver.lambda$handle$0(AnimationTimer.java:57)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at javafx.animation.AnimationTimer$AnimationTimerReceiver.handle(AnimationTimer.java:56)
+	at com.sun.scenario.animation.AbstractMasterTimer.timePulseImpl(AbstractMasterTimer.java:357)
+	at com.sun.scenario.animation.AbstractMasterTimer$MainLoop.run(AbstractMasterTimer.java:267)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulse(QuantumToolkit.java:569)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulse(QuantumToolkit.java:553)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulseFromQueue(QuantumToolkit.java:546)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.lambda$runToolkit$12(QuantumToolkit.java:348)
+	at com.sun.glass.ui.monocle.RunnableProcessor.runLoop(RunnableProcessor.java:92)
+	at com.sun.glass.ui.monocle.RunnableProcessor.run(RunnableProcessor.java:51)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+2021-01-13 20:56:26,721 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 20:56:26,799 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 20:57:31,357 [ERROR] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Error while processing the input: MouseEventToken(MouseMoved,526.4000244140625,375.6000061035156,MouseButtonToken(2),false,false,false,false,false,false,false,false) app: window: null
+java.lang.NullPointerException: Cannot invoke "Object.getClass()" because the return value of "simplefx.util.ReflectionUtil$UseReflection.ref()" is null
+	at simplefx.util.ReflectionUtil$UseReflection.applyDynamic(ReflectionUtil.scala:18)
+	at com.jpro.meta.tk.UtilSceneTKListener$ExtendView.view(UtilSceneTKListener.scala:24)
+	at com.jpro.meta.tk.UtilSceneTKListener$ExtendView.isMonocle(UtilSceneTKListener.scala:25)
+	at com.jpro.meta.tk.SceneInputListener.processInputInScene(SceneInputListener.scala:144)
+	at com.jpro.meta.tk.SceneInputListener.processInput(SceneInputListener.scala:132)
+	at com.jpro.meta.tk.SceneInputListener.processInputs(SceneInputListener.scala:101)
+	at com.jpro.meta.tk.SceneInputListener.$anonfun$new$4(SceneInputListener.scala:42)
+	at simplefx.cores.standard.parts.CoreTimeEvent.$anonfun$runAsAnimation$1(CoreTimeEvent.scala:64)
+	at simplefx.cores.standard.parts.CoreTimeEvent$$anon$2.handle(CoreTimeEvent.scala:46)
+	at javafx.animation.AnimationTimer$AnimationTimerReceiver.lambda$handle$0(AnimationTimer.java:57)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at javafx.animation.AnimationTimer$AnimationTimerReceiver.handle(AnimationTimer.java:56)
+	at com.sun.scenario.animation.AbstractMasterTimer.timePulseImpl(AbstractMasterTimer.java:357)
+	at com.sun.scenario.animation.AbstractMasterTimer$MainLoop.run(AbstractMasterTimer.java:267)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulse(QuantumToolkit.java:569)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulse(QuantumToolkit.java:553)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulseFromQueue(QuantumToolkit.java:546)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.lambda$runToolkit$12(QuantumToolkit.java:348)
+	at com.sun.glass.ui.monocle.RunnableProcessor.runLoop(RunnableProcessor.java:92)
+	at com.sun.glass.ui.monocle.RunnableProcessor.run(RunnableProcessor.java:51)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+2021-01-13 22:18:18,347 [ERROR] from akka.io.TcpListener in application-akka.actor.default-dispatcher-8 - Bind failed for TCP channel on endpoint [/0.0.0.0:8080]
+java.net.BindException: [/0.0.0.0:8080] Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:550)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:249)
+	at java.base/sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:88)
+	at akka.io.TcpListener.liftedTree1$1(TcpListener.scala:60)
+	at akka.io.TcpListener.<init>(TcpListener.scala:57)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at akka.util.Reflect$.instantiate(Reflect.scala:70)
+	at akka.actor.ArgsReflectConstructor.produce(IndirectActorProducer.scala:101)
+	at akka.actor.Props.newActor(Props.scala:226)
+	at akka.actor.ActorCell.newActor(ActorCell.scala:611)
+	at akka.actor.ActorCell.create(ActorCell.scala:637)
+	at akka.actor.ActorCell.invokeAll$1(ActorCell.scala:511)
+	at akka.actor.ActorCell.systemInvoke(ActorCell.scala:533)
+	at akka.dispatch.Mailbox.processAllSystemMessages(Mailbox.scala:295)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:243)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1016)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1665)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1598)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+2021-01-13 22:19:36,955 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 22:19:37,036 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 22:19:38,331 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 22:19:38,443 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 22:32:28,560 [ERROR] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Error while processing the input: MouseEventToken(MouseMoved,1169.5999755859375,676.4000244140625,MouseButtonToken(2),false,false,false,false,false,false,false,false) app: window: null
+java.lang.NullPointerException: Cannot invoke "Object.getClass()" because the return value of "simplefx.util.ReflectionUtil$UseReflection.ref()" is null
+	at simplefx.util.ReflectionUtil$UseReflection.applyDynamic(ReflectionUtil.scala:18)
+	at com.jpro.meta.tk.UtilSceneTKListener$ExtendView.view(UtilSceneTKListener.scala:24)
+	at com.jpro.meta.tk.UtilSceneTKListener$ExtendView.isMonocle(UtilSceneTKListener.scala:25)
+	at com.jpro.meta.tk.SceneInputListener.processInputInScene(SceneInputListener.scala:144)
+	at com.jpro.meta.tk.SceneInputListener.processInput(SceneInputListener.scala:132)
+	at com.jpro.meta.tk.SceneInputListener.processInputs(SceneInputListener.scala:101)
+	at com.jpro.meta.tk.SceneInputListener.$anonfun$new$4(SceneInputListener.scala:42)
+	at simplefx.cores.standard.parts.CoreTimeEvent.$anonfun$runAsAnimation$1(CoreTimeEvent.scala:64)
+	at simplefx.cores.standard.parts.CoreTimeEvent$$anon$2.handle(CoreTimeEvent.scala:46)
+	at javafx.animation.AnimationTimer$AnimationTimerReceiver.lambda$handle$0(AnimationTimer.java:57)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at javafx.animation.AnimationTimer$AnimationTimerReceiver.handle(AnimationTimer.java:56)
+	at com.sun.scenario.animation.AbstractMasterTimer.timePulseImpl(AbstractMasterTimer.java:357)
+	at com.sun.scenario.animation.AbstractMasterTimer$MainLoop.run(AbstractMasterTimer.java:267)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulse(QuantumToolkit.java:569)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulse(QuantumToolkit.java:553)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulseFromQueue(QuantumToolkit.java:546)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.lambda$runToolkit$12(QuantumToolkit.java:348)
+	at com.sun.glass.ui.monocle.RunnableProcessor.runLoop(RunnableProcessor.java:92)
+	at com.sun.glass.ui.monocle.RunnableProcessor.run(RunnableProcessor.java:51)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+2021-01-13 22:32:35,413 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 188
+2021-01-13 22:32:35,510 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 188
+2021-01-13 22:32:36,118 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 22:32:36,198 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 22:38:07,847 [ERROR] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Error while processing the input: MouseEventToken(MouseMoved,1192.0,717.2000122070312,MouseButtonToken(2),false,false,false,false,false,false,false,false) app: window: null
+java.lang.NullPointerException: Cannot invoke "Object.getClass()" because the return value of "simplefx.util.ReflectionUtil$UseReflection.ref()" is null
+	at simplefx.util.ReflectionUtil$UseReflection.applyDynamic(ReflectionUtil.scala:18)
+	at com.jpro.meta.tk.UtilSceneTKListener$ExtendView.view(UtilSceneTKListener.scala:24)
+	at com.jpro.meta.tk.UtilSceneTKListener$ExtendView.isMonocle(UtilSceneTKListener.scala:25)
+	at com.jpro.meta.tk.SceneInputListener.processInputInScene(SceneInputListener.scala:144)
+	at com.jpro.meta.tk.SceneInputListener.processInput(SceneInputListener.scala:132)
+	at com.jpro.meta.tk.SceneInputListener.processInputs(SceneInputListener.scala:101)
+	at com.jpro.meta.tk.SceneInputListener.$anonfun$new$4(SceneInputListener.scala:42)
+	at simplefx.cores.standard.parts.CoreTimeEvent.$anonfun$runAsAnimation$1(CoreTimeEvent.scala:64)
+	at simplefx.cores.standard.parts.CoreTimeEvent$$anon$2.handle(CoreTimeEvent.scala:46)
+	at javafx.animation.AnimationTimer$AnimationTimerReceiver.lambda$handle$0(AnimationTimer.java:57)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at javafx.animation.AnimationTimer$AnimationTimerReceiver.handle(AnimationTimer.java:56)
+	at com.sun.scenario.animation.AbstractMasterTimer.timePulseImpl(AbstractMasterTimer.java:357)
+	at com.sun.scenario.animation.AbstractMasterTimer$MainLoop.run(AbstractMasterTimer.java:267)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulse(QuantumToolkit.java:569)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulse(QuantumToolkit.java:553)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulseFromQueue(QuantumToolkit.java:546)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.lambda$runToolkit$12(QuantumToolkit.java:348)
+	at com.sun.glass.ui.monocle.RunnableProcessor.runLoop(RunnableProcessor.java:92)
+	at com.sun.glass.ui.monocle.RunnableProcessor.run(RunnableProcessor.java:51)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+2021-01-13 22:38:12,843 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 188
+2021-01-13 22:38:12,955 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 188
+2021-01-13 22:38:13,995 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 22:38:14,075 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 22:42:32,348 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 188
+2021-01-13 22:42:32,460 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 188
+2021-01-13 22:42:33,100 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 188
+2021-01-13 22:42:33,116 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 188
+2021-01-13 22:42:33,789 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 22:42:33,868 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 22:43:56,733 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 22:43:56,864 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 22:44:01,170 [ERROR] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Error while processing the input: MouseEventToken(MouseMoved,1002.4000244140625,480.3999938964844,MouseButtonToken(2),false,false,false,false,false,false,false,false) app: window: null
+java.lang.NullPointerException: Cannot invoke "Object.getClass()" because the return value of "simplefx.util.ReflectionUtil$UseReflection.ref()" is null
+	at simplefx.util.ReflectionUtil$UseReflection.applyDynamic(ReflectionUtil.scala:18)
+	at com.jpro.meta.tk.UtilSceneTKListener$ExtendView.view(UtilSceneTKListener.scala:24)
+	at com.jpro.meta.tk.UtilSceneTKListener$ExtendView.isMonocle(UtilSceneTKListener.scala:25)
+	at com.jpro.meta.tk.SceneInputListener.processInputInScene(SceneInputListener.scala:144)
+	at com.jpro.meta.tk.SceneInputListener.processInput(SceneInputListener.scala:132)
+	at com.jpro.meta.tk.SceneInputListener.processInputs(SceneInputListener.scala:101)
+	at com.jpro.meta.tk.SceneInputListener.$anonfun$new$4(SceneInputListener.scala:42)
+	at simplefx.cores.standard.parts.CoreTimeEvent.$anonfun$runAsAnimation$1(CoreTimeEvent.scala:64)
+	at simplefx.cores.standard.parts.CoreTimeEvent$$anon$2.handle(CoreTimeEvent.scala:46)
+	at javafx.animation.AnimationTimer$AnimationTimerReceiver.lambda$handle$0(AnimationTimer.java:57)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at javafx.animation.AnimationTimer$AnimationTimerReceiver.handle(AnimationTimer.java:56)
+	at com.sun.scenario.animation.AbstractMasterTimer.timePulseImpl(AbstractMasterTimer.java:357)
+	at com.sun.scenario.animation.AbstractMasterTimer$MainLoop.run(AbstractMasterTimer.java:267)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulse(QuantumToolkit.java:569)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulse(QuantumToolkit.java:553)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulseFromQueue(QuantumToolkit.java:546)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.lambda$runToolkit$12(QuantumToolkit.java:348)
+	at com.sun.glass.ui.monocle.RunnableProcessor.runLoop(RunnableProcessor.java:92)
+	at com.sun.glass.ui.monocle.RunnableProcessor.run(RunnableProcessor.java:51)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+2021-01-13 22:46:54,798 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 22:46:54,879 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 22:48:06,417 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 188
+2021-01-13 22:48:06,500 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 188
+2021-01-13 22:48:07,008 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 22:48:07,106 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 22:51:40,786 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 22:51:40,866 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 22:59:57,601 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 22:59:57,681 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 23:00:28,566 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 23:00:28,648 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 23:00:58,878 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 23:00:58,958 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 23:01:00,479 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 23:01:00,558 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 23:02:38,368 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 23:02:38,463 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 23:04:27,303 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 23:04:27,368 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 23:05:27,095 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 23:05:27,190 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 23:08:40,869 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 23:08:40,950 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 23:10:38,330 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 23:10:38,410 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 23:10:49,338 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-13 23:10:49,418 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190

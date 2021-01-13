@@ -26,6 +26,8 @@ public class DatabaseOperations {
     private static final String GET_OCCUPIED_ON_DATE = "SELECT date FROM Appointment WHERE (DATEPART(yy, date) = ? " +
             "and DATEPART(mm, date) = ? and DATEPART(dd, date) = ? and idBloodBank = ?)";
     private static final String UPDATE_USER_WEIGHT = "UPDATE Donor SET weight = ? WHERE email = ?";
+    private static final String INIT_BLOOD_STOCK = "INSERT INTO BloodStock Values(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    private static final String ADD_BLOODSTOCK = "UPDATE BloodStock SET ? = ? + 1 WHERE idBloodBank = ?";
 
 
     /**
@@ -251,7 +253,7 @@ public class DatabaseOperations {
         return null;
     }
 
-    public ArrayList<Hospital> getHospitals(ArrayList<County> counties){
+    public ArrayList<Hospital> getHospitals(ArrayList<County> counties) {
         try (Connection conn = DatabaseConnectionFactory.getConnection();
              PreparedStatement preparedStatement = conn.prepareStatement(GET_HOSPITALS)) {
             ArrayList<Hospital> hospital = new ArrayList<>();
@@ -345,6 +347,77 @@ public class DatabaseOperations {
             try (PreparedStatement preparedStatement = conn.prepareStatement(UPDATE_USER_WEIGHT)) {
                 preparedStatement.setInt(1, weight);
                 preparedStatement.setString(2, donor.getEmail());
+                preparedStatement.executeUpdate();
+            }
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+        }
+    }
+
+    public void initBloodBankQuantities(int bloodBankId) {
+        try (Connection conn = DatabaseConnectionFactory.getConnection()) {
+            try (PreparedStatement preparedStatement = conn.prepareStatement(INIT_BLOOD_STOCK)) {
+                preparedStatement.setInt(1, bloodBankId);
+                preparedStatement.setInt(2, 0);
+                preparedStatement.setInt(3, 0);
+                preparedStatement.setInt(4, 0);
+                preparedStatement.setInt(5, 0);
+                preparedStatement.setInt(6, 0);
+                preparedStatement.setInt(7, 0);
+                preparedStatement.setInt(8, 0);
+                preparedStatement.setInt(9, 0);
+                preparedStatement.executeUpdate();
+            }
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+        }
+    }
+
+    public int getBloodStockCapacity(BloodType bloodType, int bloodBankId) {
+        try (Connection conn = DatabaseConnectionFactory.getConnection()) {
+            String rh;
+            if (bloodType.getRH()) rh = "Pos";
+            else rh = "Neg";
+            try (PreparedStatement preparedStatement = conn.prepareStatement("SELECT quantity" + bloodType.getName() + rh + " FROM BloodStock WHERE idBloodBank = ?")) {
+                preparedStatement.setInt(1, bloodBankId);
+                try (ResultSet r = preparedStatement.executeQuery()) {
+                    while (r.next()) {
+                        if (bloodType.getRH())
+                            return r.getInt("quantity" + bloodType.getName() + "Pos");
+                        else r.getInt("quantity" + bloodType.getName() + "Neg");
+                    }
+                }
+            }
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+        }
+        return 0;
+    }
+
+    public void addBloodStock(int bloodBankId, BloodType bloodType) {
+        try (Connection conn = DatabaseConnectionFactory.getConnection()) {
+            String statement = "";
+            if (bloodType.getName().equals("A2")) {
+                if (bloodType.getRH())
+                    statement = "UPDATE BloodStock SET quantityA2Pos = ? WHERE idBloodBank = ?";
+                else statement = "UPDATE BloodStock SET quantityA2Neg = ? WHERE idBloodBank = ?";
+            } else if (bloodType.getName().equals("01")) {
+                if (bloodType.getRH())
+                    statement = "UPDATE BloodStock SET quantity01Pos = ? WHERE idBloodBank = ?";
+                else statement = "UPDATE BloodStock SET quantity01Neg = ? WHERE idBloodBank = ?";
+            } else if (bloodType.getName().equals("B3")) {
+                if (bloodType.getRH())
+                    statement = "UPDATE BloodStock SET quantityB3Pos = ? WHERE idBloodBank = ?";
+                else statement = "UPDATE BloodStock SET quantityB3Neg = ? WHERE idBloodBank = ?";
+            }
+            if (bloodType.getName().equals("AB4")) {
+                if (bloodType.getRH())
+                    statement = "UPDATE BloodStock SET quantityAB4Pos = ? WHERE idBloodBank = ?";
+                else statement = "UPDATE BloodStock SET quantityAB4Neg = ? WHERE idBloodBank = ?";
+            }
+            try (PreparedStatement preparedStatement = conn.prepareStatement(statement)) {
+                preparedStatement.setInt(1, getBloodStockCapacity(bloodType, bloodBankId) + 1);
+                preparedStatement.setInt(2, bloodBankId);
                 preparedStatement.executeUpdate();
             }
         } catch (SQLException sqlException) {

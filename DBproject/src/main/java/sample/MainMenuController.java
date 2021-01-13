@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import user.BloodBank;
 import user.Scraper;
 
 import java.io.IOException;
@@ -16,7 +17,8 @@ public class MainMenuController extends ParentController implements Initializabl
     private Button btnHistory;
     @FXML
     private Button btnNew;
-    @FXML private Button btnBack;
+    @FXML
+    private Button btnBack;
 
     private static final String HOVERED_BUTTON_STYLE_HISTORY = "-fx-text-fill: #e3dfde; -fx-background-color:  #ba340b; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.8), 10, 0, 0, 5);";
     private static final String IDLE_BUTTON_STYLE_HISTORY = "-fx-background-color:  #cf5b38; -fx-background-radius: 10";
@@ -32,9 +34,13 @@ public class MainMenuController extends ParentController implements Initializabl
         }
         if (bloodBanks == null) {
             bloodBanks = database.getBloodBanks(counties);
+
+            /*for (BloodBank bloodBank : bloodBanks) {
+                database.initBloodBankQuantities(bloodBanks.indexOf(bloodBank) + 1);
+            }*/
         }
 
-        if(hospitals == null){
+        if (hospitals == null) {
             hospitals = database.getHospitals(counties);
         }
 
