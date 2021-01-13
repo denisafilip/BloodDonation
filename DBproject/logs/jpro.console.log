@@ -2650,3 +2650,28 @@
 2021-01-14 00:28:00,035 [INFO] in scala-execution-context-global-39 - [info] c.j.m.s.Util$ - 
 2021-01-14 00:28:00,049 [INFO] in scala-execution-context-global-39 - [info] com.jpro.JS - received msg: new MainID: 11556 userid: 663406491
 2021-01-14 00:28:06,374 [INFO] in scala-execution-context-global-39 - [info] c.j.m.s.Util$ - 1/8/2021
+2021-01-14 00:33:21,916 [INFO] in scala-execution-context-global-39 - [info] c.j.i.s.Initializer$ - redirected OUT / ERR
+2021-01-14 00:33:21,917 [INFO] in scala-execution-context-global-39 - [info] c.j.i.s.Initializer$ - installed SLF4JBridge
+2021-01-14 00:33:21,917 [INFO] in scala-execution-context-global-39 - [info] c.j.i.s.MonocleInitializer$ - screen: null
+2021-01-14 00:33:21,917 [INFO] in scala-execution-context-global-53 - [info] c.j.i.s.Initializer$ - finished init!
+2021-01-14 00:33:21,917 [INFO] in scala-execution-context-global-53 - [info] c.j.i.s.Initializer$ - JavaFX version: 15.0.0.2-jpro+0-2020-09-30-150835
+2021-01-14 00:33:22,066 [INFO] in scala-execution-context-global-54 - [info] c.j.i.c.m.ChartJSONImExporter - Imported chart data Thu Jan 14 00:33:21 EET 2021
+2021-01-14 00:33:22,068 [INFO] in scala-execution-context-global-54 - [info] c.j.i.c.m.DynamicDataModel - Started Monitoring chart data...
+2021-01-14 00:33:22,768 [INFO] in scala-execution-context-global-54 - [info] c.jpro - application requested: 0!default
+2021-01-14 00:33:22,778 [INFO] in scala-execution-context-global-54 - [info] c.jpro - Creating Application: 0!default
+2021-01-14 00:33:22,782 [INFO] in scala-execution-context-global-54 - [info] c.jpro - remoteAddress 0:0:0:0:0:0:0:1
+2021-01-14 00:33:22,782 [INFO] in scala-execution-context-global-54 - [info] c.jpro - host          localhost:8080
+2021-01-14 00:33:22,782 [INFO] in scala-execution-context-global-54 - [info] c.jpro - uri           /app/0!default
+2021-01-14 00:33:23,131 [INFO] in scala-execution-context-global-54 - [info] c.j.i.s.ViewSerializerActor - appdef: AppByMain(default,sample.Main,None,NamedClassLoader(system),false) clientinfo: ClientInfo(http://localhost:8080/,http://localhost:8080/app/default,1496.0,754.0,false,en-US,List(en-US, en),,Map(Webstorm-91a5c09 -> 8725eb96-f9b8-42ab-bfda-39f985199439, Phpstorm-1349f765 -> a06e5e8a-0dec-4479-b8e3-9be386be9261),Map(Host -> List(localhost:8080), Cookie -> List(Webstorm-91a5c09=8725eb96-f9b8-42ab-bfda-39f985199439; Phpstorm-1349f765=a06e5e8a-0dec-4479-b8e3-9be386be9261), Origin -> List(http://localhost:8080), Pragma -> List(no-cache), Upgrade -> List(websocket), Connection -> List(Upgrade), User-Agent -> List(Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36 OPR/73.0.3856.329), Cache-Control -> List(no-cache), Remote-Address -> List(0:0:0:0:0:0:0:1:49530), Timeout-Access -> List(<function1>), Accept-Encoding -> List(gzip, deflate, br), Accept-Language -> List(en-US,en;q=0.9), Raw-Request-URI -> List(/app/0!default), Tls-Session-Info -> List(Session(1610577201256|SSL_NULL_WITH_NULL_NULL)), Sec-WebSocket-Key -> List(JHct2ehuNux/FLTZnRAYUw==), UpgradeToWebSocket -> List(), Sec-WebSocket-Version -> List(13), Sec-WebSocket-Extensions -> List(permessage-deflate; client_max_window_bits)))out: Actor[akka://application/system/Materializers/StreamSupervisor-0/$$f-actorRefSource#-942964797]
+2021-01-14 00:33:24,651 [INFO] in scala-execution-context-global-54 - [info] com.jpro.JS - received msg: new MainID: 4846 userid: 1625574383
+2021-01-14 00:33:27,562 [INFO] in scala-execution-context-global-54 - [info] com.jpro.JS - received msg: new MainID: 5979 userid: 1625574383
+2021-01-14 00:33:31,914 [INFO] in scala-execution-context-global-53 - [warn] c.j.m.t.SceneInputListener - Unknown Keycode: 190
+2021-01-14 00:33:32,011 [INFO] in scala-execution-context-global-53 - [warn] c.j.m.t.SceneInputListener - Unknown Keycode: 190
+2021-01-14 00:33:34,986 [INFO] in scala-execution-context-global-53 - [info] com.jpro.JS - received msg: new MainID: 6288 userid: 1625574383
+2021-01-14 00:33:36,602 [INFO] in scala-execution-context-global-53 - [info] com.jpro.JS - received msg: new MainID: 7523 userid: 1625574383
+2021-01-14 00:33:41,468 [INFO] in scala-execution-context-global-53 - [info] c.j.m.s.Util$ - 
+2021-01-14 00:33:41,482 [INFO] in scala-execution-context-global-54 - [info] com.jpro.JS - received msg: new MainID: 11556 userid: 1625574383
+2021-01-14 00:33:48,014 [INFO] in scala-execution-context-global-54 - [info] c.j.m.s.Util$ - 1/14/2022
+2021-01-14 00:33:57,643 [INFO] in scala-execution-context-global-54 - [info] com.jpro.JS - received msg: new MainID: 16769 userid: 1625574383
+2021-01-14 00:33:58,475 [INFO] in scala-execution-context-global-54 - [info] com.jpro.JS - received msg: new MainID: 17014 userid: 1625574383
+2021-01-14 00:33:59,770 [INFO] in scala-execution-context-global-54 - [info] com.jpro.JS - received msg: new MainID: 21803 userid: 1625574383

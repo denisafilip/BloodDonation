@@ -187,7 +187,7 @@ public class AppointmentsController extends ParentController {
                 dateLabel.setText("The date of your appointment must be in the future.");
                 return;
             }
-            if (!appointmentDate.getValue().getMonth().equals(Month.NOVEMBER) && !appointmentDate.getValue().getMonth().equals(Month.DECEMBER)) {
+            if (!LocalDate.now().getMonth().equals(Month.NOVEMBER) && !LocalDate.now().getMonth().equals(Month.DECEMBER) ) {
                 if (!Year.of(appointmentDate.getValue().getYear()).equals(Year.now())) {
                     dateLabel.setText("You can only make appointments for the current year.");
                     return;
