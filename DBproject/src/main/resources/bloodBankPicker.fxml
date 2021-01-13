@@ -11,8 +11,8 @@
 
 <AnchorPane prefHeight="760.0" prefWidth="1550.0" style="-fx-border-color: #ff5345; -fx-border-width: 3;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.BloodBankPickerController">
    <children>
-      <ComboBox fx:id="countyChoice" layoutX="419.0" layoutY="277.0" prefHeight="70.0" prefWidth="655.0" promptText="--County--" style="-fx-border-color: #FF8307;" />
-      <ComboBox fx:id="bloodBankChoice" layoutX="419.0" layoutY="434.0" prefHeight="70.0" prefWidth="655.0" promptText="--Blood Banck--" style="-fx-border-color: #FF8307;" />
+      <ComboBox fx:id="countyChoice" layoutX="419.0" layoutY="228.0" prefHeight="70.0" prefWidth="655.0" promptText="--County--" style="-fx-border-color: #FF8307;" />
+      <ComboBox fx:id="bloodBankChoice" layoutX="419.0" layoutY="345.0" prefHeight="70.0" prefWidth="655.0" promptText="--Blood Bank--" style="-fx-border-color: #FF8307;" />
       <Button layoutX="569.0" layoutY="566.0" mnemonicParsing="false" onAction="#goToAppointment" prefHeight="86.0" prefWidth="328.0" style="-fx-border-color: #FF8307;" text="Select">
          <font>
             <Font name="Bodoni MT" size="39.0" />
@@ -29,20 +29,26 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Label layoutX="419.0" layoutY="222.0" prefHeight="30.0" prefWidth="655.0" text="Pick the County you want to make your appointment:" textFill="#ff5345">
+      <Label layoutX="419.0" layoutY="198.0" prefHeight="30.0" prefWidth="655.0" text="Pick the County you want to make your appointment:" textFill="#ff5345">
          <font>
             <Font name="Bodoni MT" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="419.0" layoutY="380.0" prefHeight="30.0" prefWidth="655.0" text="Pick the Blood Bank you want to make your appointment:" textFill="#ff5345">
+      <Label layoutX="419.0" layoutY="314.0" prefHeight="30.0" prefWidth="655.0" text="Pick the Blood Bank you want to make your appointment:" textFill="#ff5345">
          <font>
             <Font name="Bodoni MT" size="24.0" />
          </font>
       </Label>
-      <ImageView fitHeight="171.0" fitWidth="221.0" layoutX="609.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="171.0" fitWidth="221.0" layoutX="623.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@assets/appointment-icon.png" />
          </image>
       </ImageView>
+      <Label layoutX="419.0" layoutY="437.0" prefHeight="30.0" prefWidth="655.0" text="Pick the Hospital for which you want to donate:" textFill="#ff5345">
+         <font>
+            <Font name="Bodoni MT" size="24.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="hospitalChoice" layoutX="419.0" layoutY="467.0" prefHeight="70.0" prefWidth="655.0" promptText="--Hospital--" style="-fx-border-color: #FF8307;" />
    </children>
 </AnchorPane>

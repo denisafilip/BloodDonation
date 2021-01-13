@@ -9,11 +9,13 @@ public class Appointment {
     private Timestamp appointmentDate;
     private Donor donor;
     private BloodBank bloodBank;
+    private Hospital hospital;
 
-    public Appointment(Timestamp appointmentDate, Donor donor, BloodBank bloodBank) {
+    public Appointment(Timestamp appointmentDate, Donor donor, BloodBank bloodBank, Hospital hospital) {
         this.appointmentDate = appointmentDate;
         this.donor = donor;
         this.bloodBank = bloodBank;
+        this.hospital = hospital;
     }
 
     public Timestamp getAppointmentDate() {
@@ -38,5 +40,13 @@ public class Appointment {
 
     public void setBloodBank(BloodBank bloodBank) {
         this.bloodBank = bloodBank;
+    }
+
+    public Hospital getHospital() {
+        return hospital;
+    }
+
+    public void setHospital(Hospital hospital) {
+        this.hospital = hospital;
     }
 }

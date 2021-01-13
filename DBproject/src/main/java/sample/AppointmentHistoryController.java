@@ -23,7 +23,11 @@ public class AppointmentHistoryController extends ParentController {
             bloodBanks = database.getBloodBanks(counties);
         }
 
-        currentDonor.setAppointments(database.getUsersAppointments(currentDonor, bloodBanks));
+        if (hospitals == null){
+            hospitals = database.getHospitals(counties);
+        }
+
+        currentDonor.setAppointments(database.getUsersAppointments(currentDonor, bloodBanks, hospitals));
     }
 
     @FXML
@@ -48,10 +52,14 @@ public class AppointmentHistoryController extends ParentController {
             bloodBankName.setLayoutX(700);
             bloodBankName.setLayoutY(20);
 
+            Text hospital = new Text(appointment.getHospital().getName());
+            hospital.setLayoutX(1100);
+            hospital.setLayoutY(20);
 
             pane.getChildren().add(donorsName);
             pane.getChildren().add(date);
             pane.getChildren().add(bloodBankName);
+            pane.getChildren().add(hospital);
 
             observableList.add(pane);
         }

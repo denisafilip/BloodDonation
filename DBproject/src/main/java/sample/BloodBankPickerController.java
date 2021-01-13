@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import user.BloodBank;
 import user.County;
+import user.Hospital;
 
 import java.io.IOException;
 import java.net.URL;
@@ -23,6 +24,9 @@ public class BloodBankPickerController extends ParentController implements Initi
 
     @FXML
     private ComboBox<String> bloodBankChoice;
+
+    @FXML
+    private ComboBox<String> hospitalChoice;
 
     private static final String HOVERED_BUTTON_STYLE_BACK = "-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.8), 10, 0, 0, 5);";
     private static final String IDLE_BUTTON_STYLE_BACK = "-fx-background-color: #ffffff;-fx-border-color: #000000; -fx-background-radius: 10";
@@ -41,12 +45,24 @@ public class BloodBankPickerController extends ParentController implements Initi
                 County county = counties.get(index);
 
                 ObservableList<String> bloodBanksOBS = FXCollections.observableArrayList();
+                ObservableList<String> hospitalsOBS = FXCollections.observableArrayList();
                 for (BloodBank bloodBank : bloodBanks) {
                     if (bloodBank.getCounty().equals(county))
                         bloodBanksOBS.add(bloodBank.getName());
                 }
                 bloodBankChoice.setItems(bloodBanksOBS);
+
+                if (countyChoice.getValue() != null) {
+                    for (Hospital hospital : hospitals) {
+                        if(hospital.getCounty().equals(county)){
+                            hospitalsOBS.add(hospital.getName());
+                        }
+                    }
+                hospitalChoice.setItems(hospitalsOBS);
+
+                }
             }
+
         });
 
         btnBack.setOnMouseEntered(e -> btnBack.setStyle(HOVERED_BUTTON_STYLE_BACK));
@@ -58,6 +74,12 @@ public class BloodBankPickerController extends ParentController implements Initi
         for (BloodBank bloodBank : bloodBanks) {
             if (bloodBank.getName().equals(bloodBankChoice.getValue())) {
                 currentBloodBank = bloodBank;
+                break;
+            }
+        }
+        for (Hospital hospital : hospitals) {
+            if(hospital.getName().equals(hospitalChoice.getValue())){
+                currentHospital = hospital;
                 break;
             }
         }

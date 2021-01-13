@@ -66,7 +66,7 @@ public class CheckInFileController extends ParentController {
             nextButton.setText("Next");
             nextButton.setVisible(true);
             nextButton.setOnAction(e -> {
-                database.insertAppointment(currentTimeStamp, database.getDonorsId(currentDonor.getEmail()), bloodBanks.indexOf(currentBloodBank) + 1);
+                database.insertAppointment(currentTimeStamp, database.getDonorsId(currentDonor.getEmail()), bloodBanks.indexOf(currentBloodBank) + 1, hospitals.indexOf(currentHospital) + 1);
                 database.insertCheckInFile(database.getDonorsId(currentDonor.getEmail()), alcoholChoiceBox.getValue().equals("Yes"), treatmentChoiceBox.getValue().equals("Yes"), tattooChoiceBox.getValue().equals("Yes"),
                         rejectedChoiceBox.getValue().equals("Yes"), covid19ChoiceBox.getValue().equals("Yes"), chronicChoiceBox.getValue().equals("Yes"), currentTimeStamp);
                 database.updateUserWeight(currentDonor, Integer.parseInt(weightTxt.getText()));

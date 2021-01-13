@@ -34,7 +34,11 @@ public class MainMenuController extends ParentController implements Initializabl
             bloodBanks = database.getBloodBanks(counties);
         }
 
-        currentDonor.setAppointments(database.getUsersAppointments(currentDonor, bloodBanks));
+        if(hospitals == null){
+            hospitals = database.getHospitals(counties);
+        }
+
+        currentDonor.setAppointments(database.getUsersAppointments(currentDonor, bloodBanks, hospitals));
     }
 
     @FXML
