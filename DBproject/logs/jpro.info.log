@@ -2301,3 +2301,95 @@ java.lang.NullPointerException: Cannot invoke "Object.getClass()" because the re
 2021-01-13 23:10:49,338 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
 2021-01-13 23:10:49,418 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
 2021-01-13 23:10:52,635 [INFO] from com.jpro.JS in JavaFX Application Thread - received msg: new MainID: 6781 userid: 592126100
+2021-01-13 23:29:49,586 [INFO] from controllers.jpro in application-akka.actor.default-dispatcher-11 - application requested: 1100165764!default
+2021-01-13 23:29:49,587 [INFO] from controllers.jpro in application-akka.actor.default-dispatcher-11 - Creating Application: 1100165764!default
+2021-01-13 23:29:49,587 [INFO] from controllers.jpro in application-akka.actor.default-dispatcher-11 - remoteAddress 0:0:0:0:0:0:0:1
+2021-01-13 23:29:49,588 [INFO] from controllers.jpro in application-akka.actor.default-dispatcher-11 - host          localhost:8080
+2021-01-13 23:29:49,588 [INFO] from controllers.jpro in application-akka.actor.default-dispatcher-11 - uri           /app/1100165764!default
+2021-01-13 23:29:49,617 [INFO] from com.jpro.internal.server.ViewSerializerActor in JavaFX Application Thread - appdef: AppByID(1100165764,Some(AppByMain(default,sample.Main,None,NamedClassLoader(system),false))) clientinfo: ClientInfo(http://localhost:8080/,http://localhost:8080/app/default,1536.0,754.0,false,en-US,List(en-US, en, ro, ru),,Map(),Map(Host -> List(localhost:8080), Origin -> List(http://localhost:8080), Pragma -> List(no-cache), Upgrade -> List(websocket), Connection -> List(Upgrade), User-Agent -> List(Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36), Cache-Control -> List(no-cache), Remote-Address -> List(0:0:0:0:0:0:0:1:52090), Timeout-Access -> List(<function1>), Accept-Encoding -> List(gzip, deflate, br), Accept-Language -> List(en-US,en;q=0.9,ro;q=0.8,ru;q=0.7), Raw-Request-URI -> List(/app/1100165764!default), Tls-Session-Info -> List(Session(1610572218952|SSL_NULL_WITH_NULL_NULL)), Sec-WebSocket-Key -> List(BUP4H4Eg+pY/KQ9wvb0yXA==), UpgradeToWebSocket -> List(), Sec-WebSocket-Version -> List(13), Sec-WebSocket-Extensions -> List(permessage-deflate; client_max_window_bits)))out: Actor[akka://application/system/Materializers/StreamSupervisor-0/$$k-actorRefSource#-1913581643]
+2021-01-13 23:29:50,458 [INFO] from com.jpro.JS in JavaFX Application Thread - received msg: new MainID: 4846 userid: 366133959
+2021-01-13 23:29:50,933 [INFO] from com.jpro.internal.stats.ViewInfo$ in JavaFX Application Thread - 
+2021-01-13 23:29:50,933 [INFO] from com.jpro.internal.stats.ViewInfo$ in JavaFX Application Thread - Application closed:
+2021-01-13 23:29:50,935 [INFO] from com.jpro.internal.stats.ViewInfo$ in JavaFX Application Thread - startTime      : Wed Jan 13 23:29:50 EET 2021      
+2021-01-13 23:29:50,935 [INFO] from com.jpro.internal.stats.ViewInfo$ in JavaFX Application Thread - averageLatency : 00:00:00.027 
+2021-01-13 23:29:50,936 [INFO] from com.jpro.internal.stats.ViewInfo$ in JavaFX Application Thread - averageJitter  : 00:00:00.047  
+2021-01-13 23:29:50,937 [INFO] from com.jpro.internal.stats.ViewInfo$ in JavaFX Application Thread - framerateServer: 00:00:00.000
+2021-01-13 23:29:50,938 [INFO] from com.jpro.internal.stats.ViewInfo$ in JavaFX Application Thread - framerateClient: 00:00:00.000
+2021-01-13 23:29:50,938 [INFO] from com.jpro.internal.stats.ViewInfo$ in JavaFX Application Thread - raw            : 154690
+2021-01-13 23:29:50,938 [INFO] from com.jpro.internal.stats.ViewInfo$ in JavaFX Application Thread - zipped         : 17976
+2021-01-13 23:29:50,938 [INFO] from com.jpro.internal.stats.ViewInfo$ in JavaFX Application Thread - 
+2021-01-13 23:29:51,243 [INFO] from com.jpro.internal.stats.ViewInfo$ in JavaFX Application Thread - 
+2021-01-13 23:29:51,244 [INFO] from com.jpro.internal.stats.ViewInfo$ in JavaFX Application Thread - Application closed:
+2021-01-13 23:29:51,244 [INFO] from com.jpro.internal.stats.ViewInfo$ in JavaFX Application Thread - startTime      : Wed Jan 13 23:29:51 EET 2021      
+2021-01-13 23:29:51,246 [INFO] from com.jpro.internal.stats.ViewInfo$ in JavaFX Application Thread - averageLatency : 00:00:00.002 
+2021-01-13 23:29:51,246 [INFO] from com.jpro.internal.stats.ViewInfo$ in JavaFX Application Thread - averageJitter  : 00:00:00.000  
+2021-01-13 23:29:51,246 [INFO] from com.jpro.internal.stats.ViewInfo$ in JavaFX Application Thread - framerateServer: 00:00:00.000
+2021-01-13 23:29:51,247 [INFO] from com.jpro.internal.stats.ViewInfo$ in JavaFX Application Thread - framerateClient: 00:00:00.000
+2021-01-13 23:29:51,247 [INFO] from com.jpro.internal.stats.ViewInfo$ in JavaFX Application Thread - raw            : 929132
+2021-01-13 23:29:51,247 [INFO] from com.jpro.internal.stats.ViewInfo$ in JavaFX Application Thread - zipped         : 325966
+2021-01-13 23:29:51,247 [INFO] from com.jpro.internal.stats.ViewInfo$ in JavaFX Application Thread - 
+2021-01-13 23:29:56,347 [INFO] from com.jpro.internal.communicator.InstanceImpl in JavaFX Application Thread - closing window!
+2021-01-14 00:26:00,484 [INFO] from akka.event.slf4j.Slf4jLogger in application-akka.actor.default-dispatcher-4 - Slf4jLogger started
+2021-01-14 00:26:02,142 [INFO] from play.api.Play in Thread-0 - Application started (Prod) (no global state)
+2021-01-14 00:26:03,747 [ERROR] from akka.io.TcpListener in application-akka.actor.default-dispatcher-6 - Bind failed for TCP channel on endpoint [/0.0.0.0:8080]
+java.net.BindException: [/0.0.0.0:8080] Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:550)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:249)
+	at java.base/sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:88)
+	at akka.io.TcpListener.liftedTree1$1(TcpListener.scala:60)
+	at akka.io.TcpListener.<init>(TcpListener.scala:57)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at akka.util.Reflect$.instantiate(Reflect.scala:70)
+	at akka.actor.ArgsReflectConstructor.produce(IndirectActorProducer.scala:101)
+	at akka.actor.Props.newActor(Props.scala:226)
+	at akka.actor.ActorCell.newActor(ActorCell.scala:611)
+	at akka.actor.ActorCell.create(ActorCell.scala:637)
+	at akka.actor.ActorCell.invokeAll$1(ActorCell.scala:511)
+	at akka.actor.ActorCell.systemInvoke(ActorCell.scala:533)
+	at akka.dispatch.Mailbox.processAllSystemMessages(Mailbox.scala:295)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:243)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1016)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1665)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1598)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+2021-01-14 00:27:55,627 [INFO] from akka.event.slf4j.Slf4jLogger in application-akka.actor.default-dispatcher-4 - Slf4jLogger started
+2021-01-14 00:27:57,257 [INFO] from play.api.Play in Thread-0 - Application started (Prod) (no global state)
+2021-01-14 00:27:58,607 [INFO] from play.core.server.AkkaHttpServer in Thread-0 - Enabling HTTP/2 on Akka HTTP server...
+2021-01-14 00:27:58,610 [INFO] from play.core.server.AkkaHttpServer in Thread-0 - Listening for HTTP on /[0:0:0:0:0:0:0:0]:8080
+2021-01-14 00:27:59,025 [INFO] from com.jpro.activity in application-akka.actor.default-dispatcher-8 - Starting the server
+2021-01-14 00:27:59,026 [INFO] from com.jpro.internal.server.Initializer$ in application-akka.actor.default-dispatcher-8 -  *** Starting JPro: https://www.jpro.one/ ***
+2021-01-14 00:27:59,026 [INFO] from com.jpro.internal.server.Initializer$ in application-akka.actor.default-dispatcher-8 - OS: Windows 10
+2021-01-14 00:27:59,045 [INFO] from com.jpro.internal.server.Initializer$ in application-akka.actor.default-dispatcher-8 - JPro: 2020.1.1
+2021-01-14 00:27:59,045 [INFO] from com.jpro.internal.server.Initializer$ in application-akka.actor.default-dispatcher-8 - Java version: 15
+2021-01-14 00:27:59,046 [INFO] from com.jpro.internal.server.Initializer$ in application-akka.actor.default-dispatcher-8 - JVM: 15 Oracle Corporation
+2021-01-14 00:27:59,078 [INFO] from com.jpro.internal.server.Initializer$ in application-akka.actor.default-dispatcher-8 - redirected OUT / ERR
+2021-01-14 00:27:59,078 [INFO] from com.jpro.internal.server.Initializer$ in application-akka.actor.default-dispatcher-8 - installed SLF4JBridge
+2021-01-14 00:27:59,119 [INFO] from com.jpro.internal.server.MonocleInitializer$ in application-akka.actor.default-dispatcher-8 - screen: null
+2021-01-14 00:28:00,905 [INFO] from com.jpro.internal.server.Initializer$ in application-akka.actor.default-dispatcher-8 - finished init!
+2021-01-14 00:28:00,906 [INFO] from com.jpro.internal.server.Initializer$ in JavaFX Application Thread - JavaFX version: 15.0.0.2-jpro+0-2020-09-30-150835
+2021-01-14 00:28:01,415 [INFO] from com.jpro.internal.chart.model.ChartJSONImExporter in JavaFX Application Thread - Imported chart data Thu Jan 14 00:28:00 EET 2021
+2021-01-14 00:28:01,421 [INFO] from com.jpro.internal.chart.model.DynamicDataModel in JavaFX Application Thread - Started Monitoring chart data...
+2021-01-14 00:28:03,535 [INFO] from controllers.jpro in application-akka.actor.default-dispatcher-8 - application requested: 0!default
+2021-01-14 00:28:03,557 [INFO] from controllers.jpro in application-akka.actor.default-dispatcher-8 - Creating Application: 0!default
+2021-01-14 00:28:03,562 [INFO] from controllers.jpro in application-akka.actor.default-dispatcher-8 - remoteAddress 0:0:0:0:0:0:0:1
+2021-01-14 00:28:03,562 [INFO] from controllers.jpro in application-akka.actor.default-dispatcher-8 - host          localhost:8080
+2021-01-14 00:28:03,562 [INFO] from controllers.jpro in application-akka.actor.default-dispatcher-8 - uri           /app/0!default
+2021-01-14 00:28:04,399 [INFO] from com.jpro.internal.server.ViewSerializerActor in JavaFX Application Thread - appdef: AppByMain(default,sample.Main,None,NamedClassLoader(system),false) clientinfo: ClientInfo(http://localhost:8080/,http://localhost:8080/app/default,1536.0,754.0,false,en-US,List(en-US, en, ro, ru),,Map(),Map(Host -> List(localhost:8080), Origin -> List(http://localhost:8080), Pragma -> List(no-cache), Upgrade -> List(websocket), Connection -> List(Upgrade), User-Agent -> List(Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36), Cache-Control -> List(no-cache), Remote-Address -> List(0:0:0:0:0:0:0:1:50436), Timeout-Access -> List(<function1>), Accept-Encoding -> List(gzip, deflate, br), Accept-Language -> List(en-US,en;q=0.9,ro;q=0.8,ru;q=0.7), Raw-Request-URI -> List(/app/0!default), Tls-Session-Info -> List(Session(1610576878651|SSL_NULL_WITH_NULL_NULL)), Sec-WebSocket-Key -> List(4Y+aeI/DZo18o7m3CIB1CQ==), UpgradeToWebSocket -> List(), Sec-WebSocket-Version -> List(13), Sec-WebSocket-Extensions -> List(permessage-deflate; client_max_window_bits)))out: Actor[akka://application/system/Materializers/StreamSupervisor-0/$$f-actorRefSource#-1106065468]
+2021-01-14 00:28:08,870 [INFO] from com.jpro.JS in JavaFX Application Thread - received msg: new MainID: 4846 userid: 1520123869
+2021-01-14 00:28:10,390 [INFO] from com.jpro.JS in JavaFX Application Thread - received msg: new MainID: 5979 userid: 1520123869
+2021-01-14 00:28:15,367 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-14 00:28:15,450 [WARN] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Unknown Keycode: 190
+2021-01-14 00:28:20,854 [INFO] from com.jpro.JS in JavaFX Application Thread - received msg: new MainID: 6300 userid: 1520123869
+2021-01-14 00:28:21,686 [INFO] from com.jpro.JS in JavaFX Application Thread - received msg: new MainID: 7535 userid: 1520123869
+2021-01-14 00:28:30,056 [INFO] from com.jpro.meta.stream.Util$ in JavaFX Application Thread - 
+2021-01-14 00:28:30,182 [INFO] from com.jpro.JS in JavaFX Application Thread - received msg: new MainID: 11635 userid: 1520123869
+2021-01-14 00:28:48,742 [INFO] from com.jpro.JS in JavaFX Application Thread - received msg: new MainID: 16804 userid: 1520123869
+2021-01-14 00:29:00,709 [INFO] from com.jpro.meta.stream.Util$ in JavaFX Application Thread - 
+2021-01-14 00:29:00,743 [INFO] from com.jpro.JS in JavaFX Application Thread - received msg: new MainID: 20775 userid: 1520123869

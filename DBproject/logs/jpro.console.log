@@ -1882,3 +1882,55 @@
 2021-01-13 23:10:49,338 [INFO] in scala-execution-context-global-55 - [warn] c.j.m.t.SceneInputListener - Unknown Keycode: 190
 2021-01-13 23:10:49,418 [INFO] in scala-execution-context-global-55 - [warn] c.j.m.t.SceneInputListener - Unknown Keycode: 190
 2021-01-13 23:10:52,635 [INFO] in scala-execution-context-global-55 - [info] com.jpro.JS - received msg: new MainID: 6781 userid: 592126100
+2021-01-13 23:29:49,587 [INFO] in scala-execution-context-global-55 - [info] c.jpro - application requested: 1100165764!default
+2021-01-13 23:29:49,587 [INFO] in scala-execution-context-global-55 - [info] c.jpro - Creating Application: 1100165764!default
+2021-01-13 23:29:49,588 [INFO] in scala-execution-context-global-55 - [info] c.jpro - remoteAddress 0:0:0:0:0:0:0:1
+2021-01-13 23:29:49,588 [INFO] in scala-execution-context-global-55 - [info] c.jpro - host          localhost:8080
+2021-01-13 23:29:49,588 [INFO] in scala-execution-context-global-55 - [info] c.jpro - uri           /app/1100165764!default
+2021-01-13 23:29:49,618 [INFO] in scala-execution-context-global-55 - [info] c.j.i.s.ViewSerializerActor - appdef: AppByID(1100165764,Some(AppByMain(default,sample.Main,None,NamedClassLoader(system),false))) clientinfo: ClientInfo(http://localhost:8080/,http://localhost:8080/app/default,1536.0,754.0,false,en-US,List(en-US, en, ro, ru),,Map(),Map(Host -> List(localhost:8080), Origin -> List(http://localhost:8080), Pragma -> List(no-cache), Upgrade -> List(websocket), Connection -> List(Upgrade), User-Agent -> List(Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36), Cache-Control -> List(no-cache), Remote-Address -> List(0:0:0:0:0:0:0:1:52090), Timeout-Access -> List(<function1>), Accept-Encoding -> List(gzip, deflate, br), Accept-Language -> List(en-US,en;q=0.9,ro;q=0.8,ru;q=0.7), Raw-Request-URI -> List(/app/1100165764!default), Tls-Session-Info -> List(Session(1610572218952|SSL_NULL_WITH_NULL_NULL)), Sec-WebSocket-Key -> List(BUP4H4Eg+pY/KQ9wvb0yXA==), UpgradeToWebSocket -> List(), Sec-WebSocket-Version -> List(13), Sec-WebSocket-Extensions -> List(permessage-deflate; client_max_window_bits)))out: Actor[akka://application/system/Materializers/StreamSupervisor-0/$$k-actorRefSource#-1913581643]
+2021-01-13 23:29:50,458 [INFO] in scala-execution-context-global-55 - [info] com.jpro.JS - received msg: new MainID: 4846 userid: 366133959
+2021-01-13 23:29:50,933 [INFO] in scala-execution-context-global-55 - [info] c.j.i.s.ViewInfo$ - 
+2021-01-13 23:29:50,934 [INFO] in scala-execution-context-global-55 - [info] c.j.i.s.ViewInfo$ - Application closed:
+2021-01-13 23:29:50,935 [INFO] in scala-execution-context-global-55 - [info] c.j.i.s.ViewInfo$ - startTime      : Wed Jan 13 23:29:50 EET 2021      
+2021-01-13 23:29:50,936 [INFO] in scala-execution-context-global-55 - [info] c.j.i.s.ViewInfo$ - averageLatency : 00:00:00.027 
+2021-01-13 23:29:50,936 [INFO] in scala-execution-context-global-55 - [info] c.j.i.s.ViewInfo$ - averageJitter  : 00:00:00.047  
+2021-01-13 23:29:50,937 [INFO] in scala-execution-context-global-55 - [info] c.j.i.s.ViewInfo$ - framerateServer: 00:00:00.000
+2021-01-13 23:29:50,938 [INFO] in scala-execution-context-global-55 - [info] c.j.i.s.ViewInfo$ - framerateClient: 00:00:00.000
+2021-01-13 23:29:50,938 [INFO] in scala-execution-context-global-55 - [info] c.j.i.s.ViewInfo$ - raw            : 154690
+2021-01-13 23:29:50,938 [INFO] in scala-execution-context-global-55 - [info] c.j.i.s.ViewInfo$ - zipped         : 17976
+2021-01-13 23:29:50,938 [INFO] in scala-execution-context-global-55 - [info] c.j.i.s.ViewInfo$ - 
+2021-01-13 23:29:51,244 [INFO] in scala-execution-context-global-55 - [info] c.j.i.s.ViewInfo$ - 
+2021-01-13 23:29:51,245 [INFO] in scala-execution-context-global-55 - [info] c.j.i.s.ViewInfo$ - Application closed:
+2021-01-13 23:29:51,246 [INFO] in scala-execution-context-global-55 - [info] c.j.i.s.ViewInfo$ - startTime      : Wed Jan 13 23:29:51 EET 2021      
+2021-01-13 23:29:51,247 [INFO] in scala-execution-context-global-55 - [info] c.j.i.s.ViewInfo$ - averageLatency : 00:00:00.002 
+2021-01-13 23:29:51,247 [INFO] in scala-execution-context-global-55 - [info] c.j.i.s.ViewInfo$ - averageJitter  : 00:00:00.000  
+2021-01-13 23:29:51,248 [INFO] in scala-execution-context-global-53 - [info] c.j.i.s.ViewInfo$ - framerateServer: 00:00:00.000
+2021-01-13 23:29:51,248 [INFO] in scala-execution-context-global-53 - [info] c.j.i.s.ViewInfo$ - framerateClient: 00:00:00.000
+2021-01-13 23:29:51,248 [INFO] in scala-execution-context-global-53 - [info] c.j.i.s.ViewInfo$ - raw            : 929132
+2021-01-13 23:29:51,249 [INFO] in scala-execution-context-global-53 - [info] c.j.i.s.ViewInfo$ - zipped         : 325966
+2021-01-13 23:29:51,249 [INFO] in scala-execution-context-global-40 - [info] c.j.i.s.ViewInfo$ - 
+2021-01-13 23:29:56,348 [INFO] in scala-execution-context-global-40 - [info] c.j.i.c.InstanceImpl - closing window!
+2021-01-14 00:28:00,907 [INFO] in scala-execution-context-global-39 - [info] c.j.i.s.Initializer$ - redirected OUT / ERR
+2021-01-14 00:28:00,907 [INFO] in scala-execution-context-global-39 - [info] c.j.i.s.Initializer$ - installed SLF4JBridge
+2021-01-14 00:28:00,907 [INFO] in scala-execution-context-global-39 - [info] c.j.i.s.MonocleInitializer$ - screen: null
+2021-01-14 00:28:00,908 [INFO] in scala-execution-context-global-39 - [info] c.j.i.s.Initializer$ - finished init!
+2021-01-14 00:28:00,908 [INFO] in scala-execution-context-global-39 - [info] c.j.i.s.Initializer$ - JavaFX version: 15.0.0.2-jpro+0-2020-09-30-150835
+2021-01-14 00:28:01,418 [INFO] in scala-execution-context-global-39 - [info] c.j.i.c.m.ChartJSONImExporter - Imported chart data Thu Jan 14 00:28:00 EET 2021
+2021-01-14 00:28:01,422 [INFO] in scala-execution-context-global-39 - [info] c.j.i.c.m.DynamicDataModel - Started Monitoring chart data...
+2021-01-14 00:28:03,536 [INFO] in scala-execution-context-global-39 - [info] c.jpro - application requested: 0!default
+2021-01-14 00:28:03,558 [INFO] in scala-execution-context-global-39 - [info] c.jpro - Creating Application: 0!default
+2021-01-14 00:28:03,562 [INFO] in scala-execution-context-global-39 - [info] c.jpro - remoteAddress 0:0:0:0:0:0:0:1
+2021-01-14 00:28:03,563 [INFO] in scala-execution-context-global-39 - [info] c.jpro - host          localhost:8080
+2021-01-14 00:28:03,563 [INFO] in scala-execution-context-global-39 - [info] c.jpro - uri           /app/0!default
+2021-01-14 00:28:04,400 [INFO] in scala-execution-context-global-39 - [info] c.j.i.s.ViewSerializerActor - appdef: AppByMain(default,sample.Main,None,NamedClassLoader(system),false) clientinfo: ClientInfo(http://localhost:8080/,http://localhost:8080/app/default,1536.0,754.0,false,en-US,List(en-US, en, ro, ru),,Map(),Map(Host -> List(localhost:8080), Origin -> List(http://localhost:8080), Pragma -> List(no-cache), Upgrade -> List(websocket), Connection -> List(Upgrade), User-Agent -> List(Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36), Cache-Control -> List(no-cache), Remote-Address -> List(0:0:0:0:0:0:0:1:50436), Timeout-Access -> List(<function1>), Accept-Encoding -> List(gzip, deflate, br), Accept-Language -> List(en-US,en;q=0.9,ro;q=0.8,ru;q=0.7), Raw-Request-URI -> List(/app/0!default), Tls-Session-Info -> List(Session(1610576878651|SSL_NULL_WITH_NULL_NULL)), Sec-WebSocket-Key -> List(4Y+aeI/DZo18o7m3CIB1CQ==), UpgradeToWebSocket -> List(), Sec-WebSocket-Version -> List(13), Sec-WebSocket-Extensions -> List(permessage-deflate; client_max_window_bits)))out: Actor[akka://application/system/Materializers/StreamSupervisor-0/$$f-actorRefSource#-1106065468]
+2021-01-14 00:28:08,871 [INFO] in scala-execution-context-global-39 - [info] com.jpro.JS - received msg: new MainID: 4846 userid: 1520123869
+2021-01-14 00:28:10,390 [INFO] in scala-execution-context-global-39 - [info] com.jpro.JS - received msg: new MainID: 5979 userid: 1520123869
+2021-01-14 00:28:15,368 [INFO] in scala-execution-context-global-39 - [warn] c.j.m.t.SceneInputListener - Unknown Keycode: 190
+2021-01-14 00:28:15,451 [INFO] in scala-execution-context-global-39 - [warn] c.j.m.t.SceneInputListener - Unknown Keycode: 190
+2021-01-14 00:28:20,854 [INFO] in scala-execution-context-global-39 - [info] com.jpro.JS - received msg: new MainID: 6300 userid: 1520123869
+2021-01-14 00:28:21,686 [INFO] in scala-execution-context-global-39 - [info] com.jpro.JS - received msg: new MainID: 7535 userid: 1520123869
+2021-01-14 00:28:30,056 [INFO] in scala-execution-context-global-39 - [info] c.j.m.s.Util$ - 
+2021-01-14 00:28:30,182 [INFO] in scala-execution-context-global-52 - [info] com.jpro.JS - received msg: new MainID: 11635 userid: 1520123869
+2021-01-14 00:28:48,742 [INFO] in scala-execution-context-global-52 - [info] com.jpro.JS - received msg: new MainID: 16804 userid: 1520123869
+2021-01-14 00:29:00,710 [INFO] in scala-execution-context-global-52 - [info] c.j.m.s.Util$ - 
+2021-01-14 00:29:00,743 [INFO] in scala-execution-context-global-52 - [info] com.jpro.JS - received msg: new MainID: 20775 userid: 1520123869
