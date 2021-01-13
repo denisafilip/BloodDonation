@@ -87,7 +87,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Label alignment="CENTER" layoutX="28.0" layoutY="34.0" prefHeight="104.0" prefWidth="354.0" text="This email is not registered. Please create a new account." textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="24.400000000000006" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="34.0">
+                        <Label fx:id="lblAlert" alignment="CENTER" layoutX="28.0" layoutY="34.0" prefHeight="104.0" prefWidth="354.0" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="24.400000000000006" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="34.0">
                            <font>
                               <Font name="Arial" size="22.0" />
                            </font>

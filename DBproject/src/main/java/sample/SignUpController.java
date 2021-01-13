@@ -119,6 +119,10 @@ public class SignUpController extends ParentController implements Initializable 
             lblLastName.setText("Last name must contain only letters.");
             return;
         }
+        if (!donor.isEmailValid()) {
+            lblEmail.setText("This email is not valid.");
+            return;
+        }
         if (!donor.verifyPhoneNumber()) {
             lblPhoneNumber.setText("Your phone number must have 10 digits.");
             return;
