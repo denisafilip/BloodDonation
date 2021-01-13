@@ -20,7 +20,7 @@ public class User {
     private ArrayList<Appointment> appointments;
 
     public User() {
-
+        this.appointments = new ArrayList<>();
     }
 
     public User(String firstName, String lastName, String phoneNumber, LocalDate dateOfBirth, BloodType bloodType, County county, String CNP) {
@@ -32,6 +32,7 @@ public class User {
         this.bloodType = bloodType;
         this.county = county;
         this.CNP = CNP;
+        this.appointments = new ArrayList<>();
         determineGender();
     }
 

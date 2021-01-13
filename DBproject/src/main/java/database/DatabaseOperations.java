@@ -391,7 +391,7 @@ public class DatabaseOperations {
         } catch (SQLException sqlException) {
             sqlException.printStackTrace();
         }
-        return -1;
+        return 0;
     }
 
     public void addBloodStock(int bloodBankId, BloodType bloodType) {
@@ -412,10 +412,11 @@ public class DatabaseOperations {
             }
             if (bloodType.getName().equals("AB4")) {
                 if (bloodType.getRH())
-                    statement = "UPDATE BloodStock SET quantityAB4Pos = quantityAB4Pos + 1  WHERE idBloodBank = ?";
+                    statement = "UPDATE BloodStock SET quantityAB4Pos = quantityAB4Pos + 1 WHERE idBloodBank = ?";
                 else statement = "UPDATE BloodStock SET quantityAB4Neg = quantityAB4Neg + 1 WHERE idBloodBank = ?";
             }
             try (PreparedStatement preparedStatement = conn.prepareStatement(statement)) {
+                //preparedStatement.setInt(1, getBloodStockCapacity(bloodType, bloodBankId) + 1);
                 preparedStatement.setInt(1, bloodBankId);
                 preparedStatement.executeUpdate();
             }
