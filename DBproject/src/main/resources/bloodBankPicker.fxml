@@ -21,7 +21,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="btnBack" layoutX="60.0" layoutY="55.0" mnemonicParsing="false" onAction="#goBackToMainMenu" prefHeight="59.0" prefWidth="147.0" style="-fx-background-radius: 0; -fx-background-color: #FFFFFF; -fx-border-color: #FF8307; -fx-border-width: 2;" text="Back" AnchorPane.bottomAnchor="649.0" AnchorPane.leftAnchor="57.0" AnchorPane.rightAnchor="1346.0" AnchorPane.topAnchor="52.0">
+      <Button fx:id="btnBack" layoutX="51.0" layoutY="45.0" mnemonicParsing="false" onAction="#goBackToMainMenu" prefHeight="49.0" prefWidth="150.0" style="-fx-background-radius: 0; -fx-background-color: #FFFFFF; -fx-border-color: #FF8307; -fx-border-width: 2;" text="Back">
          <font>
             <Font name="Arial Bold" size="23.0" />
          </font>
@@ -29,12 +29,12 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Label layoutX="419.0" layoutY="198.0" prefHeight="30.0" prefWidth="655.0" text="Pick the County you want to make your appointment:" textFill="#ff5345">
+      <Label layoutX="419.0" layoutY="198.0" prefHeight="30.0" prefWidth="655.0" text="Pick the County where you want to make your appointment:" textFill="#ff5345">
          <font>
             <Font name="Bodoni MT" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="419.0" layoutY="314.0" prefHeight="30.0" prefWidth="655.0" text="Pick the Blood Bank you want to make your appointment:" textFill="#ff5345">
+      <Label layoutX="419.0" layoutY="314.0" prefHeight="30.0" prefWidth="655.0" text="Pick the Blood Bank where you want to make your appointment:" textFill="#ff5345">
          <font>
             <Font name="Bodoni MT" size="24.0" />
          </font>

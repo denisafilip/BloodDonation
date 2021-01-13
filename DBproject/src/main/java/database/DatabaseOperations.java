@@ -399,25 +399,25 @@ public class DatabaseOperations {
             String statement = "";
             if (bloodType.getName().equals("A2")) {
                 if (bloodType.getRH())
-                    statement = "UPDATE BloodStock SET quantityA2Pos = ? WHERE idBloodBank = ?";
-                else statement = "UPDATE BloodStock SET quantityA2Neg = ? WHERE idBloodBank = ?";
+                    statement = "UPDATE BloodStock SET quantityA2Pos = quantityA2Pos + 1 WHERE idBloodBank = ?";
+                else statement = "UPDATE BloodStock SET quantityA2Neg = quantityA2Neg + 1 WHERE idBloodBank = ?";
             } else if (bloodType.getName().equals("01")) {
                 if (bloodType.getRH())
-                    statement = "UPDATE BloodStock SET quantity01Pos = ? WHERE idBloodBank = ?";
-                else statement = "UPDATE BloodStock SET quantity01Neg = ? WHERE idBloodBank = ?";
+                    statement = "UPDATE BloodStock SET quantity01Pos = quantity01Pos + 1 WHERE idBloodBank = ?";
+                else statement = "UPDATE BloodStock SET quantity01Neg = quantity01Neg + 1 WHERE idBloodBank = ?";
             } else if (bloodType.getName().equals("B3")) {
                 if (bloodType.getRH())
-                    statement = "UPDATE BloodStock SET quantityB3Pos = ? WHERE idBloodBank = ?";
-                else statement = "UPDATE BloodStock SET quantityB3Neg = ? WHERE idBloodBank = ?";
+                    statement = "UPDATE BloodStock SET quantityB3Pos = quantityB3Pos + 1 WHERE idBloodBank = ?";
+                else statement = "UPDATE BloodStock SET quantityB3Neg = quantityB3Neg + 1 WHERE idBloodBank = ?";
             }
             if (bloodType.getName().equals("AB4")) {
                 if (bloodType.getRH())
-                    statement = "UPDATE BloodStock SET quantityAB4Pos = ? WHERE idBloodBank = ?";
-                else statement = "UPDATE BloodStock SET quantityAB4Neg = ? WHERE idBloodBank = ?";
+                    statement = "UPDATE BloodStock SET quantityAB4Pos = quantityAB4Pos + 1 WHERE idBloodBank = ?";
+                else statement = "UPDATE BloodStock SET quantityAB4Neg = quantityAB4Neg + 1 WHERE idBloodBank = ?";
             }
             try (PreparedStatement preparedStatement = conn.prepareStatement(statement)) {
-                preparedStatement.setInt(1, getBloodStockCapacity(bloodType, bloodBankId) + 1);
-                preparedStatement.setInt(2, bloodBankId);
+                //preparedStatement.setInt(1, getBloodStockCapacity(bloodType, bloodBankId) + 1);
+                preparedStatement.setInt(1, bloodBankId);
                 preparedStatement.executeUpdate();
             }
         } catch (SQLException sqlException) {

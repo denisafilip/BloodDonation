@@ -28,8 +28,8 @@ public class BloodBankPickerController extends ParentController implements Initi
     @FXML
     private ComboBox<String> hospitalChoice;
 
-    private static final String HOVERED_BUTTON_STYLE_BACK = "-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.8), 10, 0, 0, 5);";
-    private static final String IDLE_BUTTON_STYLE_BACK = "-fx-background-color: #ffffff;-fx-border-color: #000000; -fx-background-radius: 10";
+    private static final String HOVERED_BUTTON_STYLE_BACK = "-fx-background-color: #ffffff; -fx-border-color:  #FF8307; -fx-border-width: 2; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.8), 10, 0, 0, 5);";
+    private static final String IDLE_BUTTON_STYLE_BACK = "-fx-background-color: #ffffff;-fx-border-color:  #FF8307;-fx-border-width: 2; -fx-background-radius: 10";
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

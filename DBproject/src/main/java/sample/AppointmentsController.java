@@ -11,6 +11,8 @@ import user.Appointment;
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.time.LocalDate;
+import java.time.Month;
+import java.time.Year;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
@@ -184,6 +186,17 @@ public class AppointmentsController extends ParentController {
             if (appointmentDate.getValue().isBefore(LocalDate.now())) {
                 dateLabel.setText("The date of your appointment must be in the future.");
                 return;
+            }
+            if (!appointmentDate.getValue().getMonth().equals(Month.NOVEMBER) && !appointmentDate.getValue().getMonth().equals(Month.DECEMBER)) {
+                if (!Year.of(appointmentDate.getValue().getYear()).equals(Year.now())) {
+                    dateLabel.setText("You can only make appointments for the current year.");
+                    return;
+                }
+            } else {
+                if (!Year.of(appointmentDate.getValue().getYear()).equals(Year.now()) && !Year.of(appointmentDate.getValue().getYear()).equals(Year.of(2022))) {
+                    dateLabel.setText("You can only make appointments for the current and next year.");
+                    return;
+                }
             }
             String[] parts = appointmentDate.getValue().toString().split("-");
             Timestamp timestamp = Timestamp.valueOf(String.format("%04d-%02d-%02d %02d:00:00", Integer.parseInt(parts[0]),

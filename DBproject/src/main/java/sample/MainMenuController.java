@@ -35,7 +35,7 @@ public class MainMenuController extends ParentController implements Initializabl
         if (bloodBanks == null) {
             bloodBanks = database.getBloodBanks(counties);
 
-            /*for (BloodBank bloodBank : bloodBanks) {
+           /* for (BloodBank bloodBank : bloodBanks) {
                 database.initBloodBankQuantities(bloodBanks.indexOf(bloodBank) + 1);
             }*/
         }
