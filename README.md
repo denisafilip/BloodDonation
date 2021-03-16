@@ -1,4 +1,4 @@
-# DatabaseProject
+# Blood Donation System
 
 Project created for Database course (year 2, semester 1, Computer Science TUCN).
 
